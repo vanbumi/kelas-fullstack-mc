@@ -1,0 +1,83 @@
+html {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  background: url(https://wallpapercave.com/wp/quYHEGK.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1, h2, h3 {
+  color: red;
+  background: #f39595
+}
+
+.center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  color: red;
+}
+
+a:link {
+  color: blue;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.box {
+  width: 100%;
+  min-height: 200px;
+  border: 1px #000000 solid;
+  /* background: linear-gradient(to right, green, yellow);  */
+  background: transparent;
+  position: relative;
+}
+
+#lingkaran {
+  width: 100px;
+  height: 100px;
+  border: 10px dashed #888;
+  border-radius: 60px;
+  position: absolute;
+  top: auto;
+  left: 40%;
+}
+
+.container {
+  padding: 0 5px 80px 5px;
+  margin: 0 40px 0 40px;
+  border: 1px solid #888;
+  box-shadow: 3px 3px 10px grey;
+}
+
+ul {
+  position: relative;
+  background: #fff;
+  margin-top: 80px;
+}
+
+.container ul li {
+  color: red;
+}
+
+.container ul > li {
+  color: blue;
+}

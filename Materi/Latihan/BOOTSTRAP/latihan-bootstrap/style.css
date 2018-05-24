@@ -1,0 +1,6 @@
+.jumbotron {
+	background: url(https://images.pexels.com/photos/630786/pexels-photo-630786.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 700px;
+}

@@ -179,5 +179,9 @@ More query mongodb at:
 	https://docs.mongodb.com/manual/tutorial/query-documents/
 	
 	
+### Menghapus data collection
 
+	db.siswa.deteleOne({
+		// data
+	})
 	

@@ -1,3 +1,41 @@
+# Welcome to Bootcamp Preparation 
+
+Pelatihan Fullstack JavaScript Developer dikelola oleh MedioCademy.com
+
+
+
+#### Thema
+
+> ##### "Cara Cerdas & Cepat Menjadi Fullstack JavaScript Developer Profesional".
+
+#### Nama Bootcamp
+
+3 Days Bootcamp **"plus"** 3 Months Fullstack JavaScript Developer.
+
+#### Penjelasan
+
+Pelatihan ini adalah Kombinasi antara **"3 Hari Kelas Tatap Muka"** plus **"3 Bulan Kelas ONLINE"** di web mediocademy.com.
+
+
+
+#### Persyaratan mengikuti kelas ini
+
+##### 1. Keahlian Dasar.
+
+Tidak ada keahlian khusus programming, kelas ini untuk umum dan semua level.
+
+##### 2. Computer Hardware.
+
+* Memiliki Laptop minimal Dual Core.
+* RAM minimal 4 Gb.
+* Koneksi Internet.
+
+##### 3. Computer Operating System.
+
+* Operating System OS, Linux, Windows 10.
+
+
+
 ## Langkah2 sesudah mendaftar
 
 Ini adalah langkah-langkah sesudah mendaftar :

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        Hello, React!
+      <div>
+        <h1>John Due</h1>
+        <p>I am Software Engineer</p>
+        <p>I am Looking forward to work in your meaningful projects.</p>
       </div>
-    );
+    )
   }
 }
 

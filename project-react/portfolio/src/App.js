@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
+import SocialProfile from './SocialProfiles';
 
 class App extends Component {
 
@@ -44,6 +45,8 @@ class App extends Component {
         }
         <hr />
         <Projects />
+        <hr />
+        <SocialProfile />
       </div>
     )
   }

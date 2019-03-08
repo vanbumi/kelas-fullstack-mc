@@ -1,4 +1,4 @@
-import emaiIcon from '../assets/email_icon.png';
+import emailIcon from '../assets/email_icon.png';
 import githubIcon from '../assets/github_icon.png';
 import linkedinIcon from '../assets/linkedin_icon.png';
 import twitterIcon from '../assets/twitter_icon.png';

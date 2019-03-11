@@ -383,10 +383,113 @@ Selanjutnya kita akan mempelajari konsep-konsep diatas dalam bentuk code untuk m
 
 <br>
 
+## Latihan
+
+Kembali ke portfolio project.
+
+Buka file index.js, untuk memahami bagaimana class bekerja, buat sebuah class Animal sbb:
+
+	class Animal {
+		constructor(name,age) {
+			this.name = name;
+			this.age = age;
+		}
+		
+		class Speak {
+			console.log("I am animal1", this.name, "and I am", this.age, "years old." );
+		}
+	}
+	
+	// crate instant
+	const animal1 = new Animal('Sarimin', 2);
+	
+	// call speak method
+	animal1.speak();
+	
+Cobalah di terminal jalankan ```npm start```.
+	
+Pada browser klik kanan > inspection > buka tab Console dan refresh browser untuk melihat hasil console.log:
+
+	I am animal1 Sarimin and I am 2 years old.
+
+Kemudian kita akan melihat aktual instance dari Animal1 dengan console.log:
+
+	console.log(animal1);
+	
+lihat hasilnya pada tab Console.
+
+**Penjelasan kode**
+
+**Constructor method**, "```constructor()```", kita gunakan agar instance pada class ini dapat mengakses property class parent nya yaitu "name" dan "age".
+
+**Method speak**, "```class Speak()```", kita gunakan untuk menentukan behaviour dari sebuah class, kemudian kita console.log untuk melihat hasil keluarannya pada console.
+
+**New instance monkey**, "```new Animal();```", kita gunakan untuk membuat instance baru dari Animal class.
+
+**Call speak method**, "```animal1.speak();```", kita gunakan untuk memanggil method speak agar bisa di eksekusi.
+
+**Melihat aktual instance yang baru dibuat**, "```console.log(animal1);```", kita gunakan untuk melihat actual Animal class instance yang dibuat.
+
+<br>
+
+## Konsep Inheritance
+
+Kita akan membuat class baru extends dari class Animal:
+
+	class Lion extends Animal {
+		constructor(name, age, color, speed) {
+			// call property Animal
+			super(name,age);
+			this.color = color;
+			this.speed = speed;
+		}
+		
+		// create method
+		roar() {
+			console.log("Rooarr I have", this.color, "I can run", this.speed, km per hour)
+		}
+	}
+	
+	// Create instance of Lion
+	const lion1 = new Lion('Toto', 10, 'golden', 20);
+	
+	// call as parent class
+	lion1.speak();
+	
+	// call as inheritance class
+	lion1.roar();
+	
+	// to see actual new instance
+	console.log(lion1);
+	
+Simpan dan lihat hasilnya pada tab console.
+
+<br>
+
+Contoh diatas menjelaskan bagaimana class dan inheritance sistem bekerja pada JavaScript dan menambah pemahaman kita tentang React Component Inheritance Model.
+	
+Bila anda perhatikan pada file App.js bahwa app Component adalah extends dari Component Class, kerana itu menjadikan app component inherit property-property dan method-method yang sudah di define pada Component Class dari React.
 
 
+Sebagai pembuktian hal diatas kita akan men-deklarasi dua buah class baru, yaitu satu adalah regular class javascript yang tidak extend ke class component, dan satu lagi class yang extends ke class component: 
+
+Pada file App.js:
+
+	class ReqularClass {}
+	class ComponentClass extends Component {}
+	
+	// membuat instance class masing2
+	const reqularClassInstance = new RegularClass();
+	const componentClassInstance = new ComponentClass();
+	
+	// tampilkan 
+	console.log('reqularClassInstance', reqularClassInstance);
+	console.log('componentClassInstance', componentClassInstance);
+	
+Cek hasilnya pada tab console.
 
 
+	
 
 
 

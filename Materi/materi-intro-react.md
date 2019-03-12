@@ -488,8 +488,287 @@ Pada file App.js:
 	
 Cek hasilnya pada tab console.
 
+<br>
+
+## State
+
+State adalah updatable struktur yang memuat data untuk sebuah component. 
+
+Contoh penggunaan state, untuk mengetahui berapa kali user klik, dengan menggunakan clickedCount() method yang akan menghitung user klik.
+
+Kita akan membuat contoh penggunaan state untuk tombol toggle dimana bila di klik akan muncul detail bio dari aplikasi portfolio yang kita buat.
+
+Kita gunakan kembali file App.js dengan sebelumnya comment out/hapus latihan sebelumnya pada file App.js dan index.js:
+
+Tambahkan div pada paragraph terakhir:
+
+	<div>
+		<p>I live in Bekasi, and doing code everyday</p>
+		<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+		<p>If I am not ngoding I will sleep or watch the TV.</p>
+	</div>
+
+Simpan dan kemudian cek pada browser 3000.
+	
+Tambahan informasi bio ini akan kita buat toggleable di klik muncul dan sebaliknya, dimana defaultnya adalah "hidden", untuk fungsionalitas ini kita akan menggunaka **State**.
+
+Kita akan update App component dengan menambahkan state.
+
+Pertama-tama kita tambahkan sebuah constructor pada **app component** terlebih dahulu:
+
+	class App extends Component {
+		constructor() {
+			this.state = {};
+		}
+	
+		...
+	
+sampai disini bila anda simpan dan cek pada browser maka akan ada error "*TypeError: Cannot set property 'state' of undefined*".
+
+Solusi nya kita harus menambahkan **super property** pada constructor untuk memanggil parent class constructor method dari component induknya, atau invoke constructor of the parent component class:
+
+	class App extends Component {
+		constructor() {
+			super();
+			this.state = {};
+		}
+	
+		...
+
+maka error akan hilang.
+
+Update kode diatas sbb:
+
+	class App extends Component {
+		constructor() {
+			super();
+			this.state = { displayBio: false };
+		}
+	
+		...
+
+kemudian pada render method kita update kode nya sbb:
+
+	ender() {
+    return (
+      <div>
+        <img src={profile} alt="profile" className="profile" />
+        <h1>John Doe</h1>
+        <p>I am Software Engineer</p>
+        <p>I am Looking forward to work in your meaningful projects.</p>
+        {
+          this.state.displayBio ? (
+            <div>
+              <p>I live in Bekasi, and doing code everyday</p>
+              <p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+              <p>If I am not ngoding I will sleep or watch the TV.</p>
+              <button onClick={this.toggleDisplayBio}>Show less</button>
+            </div>
+          ) : null
+				...
+					
+**Keterangan**
+
+Kita menggunakan one line if statement:
+
+	this.state.displayBio ? true : otherwise false
+
+Statement sesudah "?" menandakan jika kondisi nya benar.
+Statement sesudah ":" jika kondisini nya tidak benar maka ini yang di eksekusi.
+
+Selanjutnya kita akan memberikan **user** untuk memiliki control untuk switch displayBio show atau hidden dalam state dengan menggunakan **setState**.
+
+<br>
+
+## setState.
+
+Materi sebelumnya kita telah mendambahkan **state** pada **app component** untuk mengontrol apakah **displayBio** akan ditampilkan atau tidak. Secara default **displayBio** telah di set **false** (hidden).
+
+Kita akan tambahkan fungsional dinamis didalam state, sehingga user bisa switch antara true dan false.
+
+Pada kode diatas **null** akan kita ubah menjadi **button**, sbb:
+
+	) : (
+		<div>
+			<button>Read more</button>
+		</div>
+	)
+
+Cek di browser, lihat hasil nya.
+
+Pada saat kita klik button ini, maka function akan di trigger untuk set boolian menjadi true.
+
+Tambahkan new helper method **readMore** dibawah method **constructor**:
+
+	readMore() {
+		// contoh bad practice dengan merubah langsung component state:
+		this.state.displayBio = true;
+	}
+
+Cara yang benar adalah (**Best practice**) : kita menambahkan component **setState** pada helper method untuk meng-update value **state**.
+
+**setState** method digunakan dengan cara memanggil ```this.setState({ })``` dimana inputnya adalah sebuah object **({...})**.
+
+Kode diatas kita rubah menjadi:
+
+	readMore() {
+		this.setState({ displayBio: true });
+	}
+
+jadi kita ingin saat button "read more" diklik maka displayBio akan berubah menjadi true.
+
+Kita akan gunakan **onClick** property pada element button:
+
+	<div>
+		<button onClick={this.readMore}>Read more</button>
+	</div>
+	
+Simpan, cek pada browser 3000, klik button **read more**, akan muncul error:
+
+<span style="color: red; font-weight: bold">TypeError: Cannot read property 'setState' of undefined. <br><br> > 10 | this.setState({ display: true })</span>
+	
+Error ini disebabkan **setState** undefined dan tidak bisa berjalan pada JavaSript karena bukan global method dari JavaScript.
+
+Kita akan melakukan test dengan melakukan console.log terhadap **this** object pada helper method **readMore** sbb:
+
+	readMore() {
+		console.log('readMore this', this);
+		//this.setState({ displayBio: true });
+	}
+	
+dan juga kita akan test **this** object pada **constructor** sebagai perbandingan:
+
+	constructor() {
+		...
+		...
+		
+		console.log('Component this', this);
+	}
+	
+Simpan dan lihat pada console tab:
+
+Pada **Component this** adalah **app** dan memiliki akses ke **setState** function, sedangkan bila kita klik Read more button **readMore this undefined**, karena tidak memiliki akses ke **class app component**.
+
+## .bind() method.
+
+Solusi nya JavaScript memiliki special **.bind** method, yang akan pass **this** object, dari satu object ke yang lainnya. Dengan cara this.helperMethod di bind(this) atau dengan bahasa kode nya sbb:
+
+	this.readMore.bind(this);
+	
+jd dengan script diatas this dari component class akan dibawa (pass) ke dalam helper method yang kita buat. Lanjut kita set sbb:
+
+	this.readMore = this.readMore.bind(this);
+
+Dengan demikian this pada setState tidak lagi undefined:
+
+	readMore() {
+		this.setState({ ... })
+	}
+	
+Oke ?
+
+Anda lihat juga paragraph bio muncul.
+
+Kita juga akan menambahkan button untuk mengembalikan ke kondisi collapse **hidden**
+
+Pada akhir paragraph tambahkan button **Show less**.
+
+	<button>Show less</button>
 
 	
+Kita akan membuat helper method baru **toggleDisplayBio()**
+
+	toggleDisplayBio() {
+		this.setState({ displayBio: !this.state.displayBio })
+	}
+	
+> ***)** **!** Operator kita gunakan untuk menyatakan kondisi sebaliknya, true to false or false to true.
+
+readMore method bisa kita hapus, jangan lupa untuk bind toggleDisplayBio() method:
+
+	this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+	
+Kemudian tambahkan onClick pada button **Show less** dan **Show more** :
+
+	<button onClick={this.toggleDisplayBio}>Show less</button>
+	
+	<button onClick={this.toggleDisplayBio}>Show more</button>
+	
+	
+Simpan dan cek klik Show more dan Show less.
+
+<br>
+
+## Class Properties dan Initializer.
+
+**class properties dan Initializer syntax** adalah best practice pada React kode untuk setup **state** dan **method** menggunakan syntax ini didalam component.
+
+Saat nya untuk explore *cleaner way*, dengan menggunakan **class property dan initializer syntax**, utamanya adalah kita dapat melampirkan **properti** dan **method** ke object class tanpa harus menggunakan **constructor**.
+
+Jadi refactor kode diatas pada file App.js, kode lengkapnya sbb:
+
+	import React, { Component } from 'react';
+	import Projects from './Projects';
+	import SocialProfile from './SocialProfiles';
+	import profile from './assets/profile.png';
+
+	class App extends Component {
+
+		state = { displayBio: false }
+
+		// helper method dirubah menjadi function arrow.
+		toggleDisplayBio = () => {
+			this.setState({ displayBio: !this.state.displayBio });
+		}
+
+		render() {
+			return (
+				<div>
+					<img src={profile} alt="profile" className="profile" />
+					<h1>John Doe</h1>
+					<p>I am Software Engineer</p>
+					<p>I am Looking forward to work in your meaningful projects.</p>
+					{
+						this.state.displayBio ? (
+							<div>
+								<p>I live in Bekasi, and doing code everyday</p>
+								<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+								<p>If I am not ngoding I will sleep or watch the TV.</p>
+								<button onClick={this.toggleDisplayBio}>Show less</button>
+							</div>
+						) : (
+								<div>
+									<button onClick={this.toggleDisplayBio}>Read more</button>
+								</div>
+							)
+					}
+					<hr />
+					<Projects />
+					<hr />
+					<SocialProfile />
+				</div>
+			)
+		}
+	}
+
+	export default App;
+
+Pastikan aplikasi masih berjalan di browser 3000.
+
+<br>
+
+## Component project
+
+Kita akan membuat component berikutnya pada portfolio aplikasi, component ini kita sebut project sebagai showcase list dari project yang telah anda kerjakan. 
+
+Project component terdiri dari:
+
+* Image.
+* Title.
+* Description.
+* Social media link.
+
+
 
 
 

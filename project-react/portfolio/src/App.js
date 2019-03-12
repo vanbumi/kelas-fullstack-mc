@@ -7,20 +7,22 @@ class App extends Component {
 
   state = { displayBio: false }
 
-  // constructor() {
+  /* constructor() {
   //   super();
   //   this.state = { displayBio: false };
 
   //   console.log('Component this', this);
 
   //   this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-  // }
-
-  // toggleDisplayBio() {
-  //   this.setState({ displayBio: !this.state.displayBio });
-  // }
-
-  toggleDisplayBio = () => {
+   }
+	*/
+	
+  /* toggleDisplayBio() {
+			this.setState({ displayBio: !this.state.displayBio });
+   }
+	*/
+  
+	toggleDisplayBio = () => {
     this.setState({ displayBio: !this.state.displayBio });
   }
 

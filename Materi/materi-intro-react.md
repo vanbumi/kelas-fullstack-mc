@@ -768,6 +768,201 @@ Project component terdiri dari:
 * Description.
 * Social media link.
 
+Untuk image silahkan anda gunakan 3 image anda pribadi sebagai portfolio bisa apa saja bebas, berinama image tsb dengan **project1**, **project2**, **project3**. Buatlah folder **assets** dibawah folder **src**, tempatkan 3 image tsb di folder assets.
+
+Buat folder baru **data** dibawah folder **src**, pada folder **data** kita tempatkan **js file** yang akan gunakan untuk menyimpan data project seperti image, title dan description. Jadi buatlah file baru dibawah data simpan dengan nama **projects.js**
+
+Update file project.js sbb:
+
+**IMPORT**
+
+	import project1 from '../assets/project1.png';
+	import project2 from '../assets/project2.png';
+	import project3 from '../assets/project3.png';
+
+**Keterangan:**
+
+Tiga baris pertama diatas kita import gambar dari folder assets dan berinama (variable) project1, project2, project3.
+
+**MEMBUAT PROJECT ARRAY**
+
+Selanjutnya membuat data project dengan array, isi data array sesuai dengan project portfolio anda masing-masing dan bebas.
+
+	const PROJECTS = [
+		{
+			id: 1,
+			title: 'Example React Application',
+			description: 'A React App that I built, involving JS and core web dev concepts!',
+			link: 'https://github.com/vanbumi/example',
+			image: project1
+		},
+		{
+			id: 2,
+			title: 'My API',
+			description: 'A REST API that I built from scratch with GET and POST requests!',
+			link: 'https://github.com/vanbumi/example',
+			image: project2
+		},
+		{
+			id: 3,
+			title: 'Operating Systems Final Project',
+			description: 'My unique final project for my university Operating Systems course.',
+			link: 'https://github.com/vanbumi/example',
+			image: project3
+		}
+	];
+	
+**Keterangan:**	
+
+* Menggunakan SCREAM_CASE sebagai convention untuk global value pada JavaScript project dimana menggunakan huruf BESAR semua.
+* Project array adalah collection dari object-object dari masing2 project.
+
+**EXPORT DEFAULT**
+
+	export default PROJECTS;
+
+**Keterangan**
+
+Agar bisa available / di share pada file/ component lain.
+
+<br>
+
+Sekarang buat file **Projects.js** dibawah folder **src**, pastikan **P** dengan HURUF BESAR.
+
+Update Project.js sbb:
+
+	import React, { Component } from 'react';
+	import PROJECTS from './data/projects';
+	
+	class Project extends Component {
+		render() {
+			return (
+				<div>
+					<h2>Highlighted Projects</h2>
+					<div>
+						{
+							PROJECTS.map((PROJECT => {
+								return (
+									<div>{PROJECT.title}</div>
+								)
+							});
+						}
+					</div>
+				</div>
+			)
+		}
+	}
+	
+	export default Projects;
+	
+Import Projects.js ini pada file App.js:
+
+Pada file App.js:
+
+	import Projects from './Projects';
+
+Tempatkan projects component di akhir render method, dibawah akhir kurung kurawal tambahkan:
+
+	<hr />
+	<Projects />
+	
+Test di browser 3000 lihat hasilnya.
+
+Klik kanan > inspection > <span style="color:red;">Warning: Each child in an array or interator should have a unique "key" prop.</span>
+
+Update kode nya pada Project.js menjadi sbb:
+
+	<div key={PROJECT.id}>{PROJECT.title}</div>
+
+Simpan dan cek lagi warning akan hilang.
+
+<br>
+
+## Props dan Project Component
+
+Kode pada Project.js diatas kita akan membuat component baru yang akan kita sebut **project component** yang akan kita gunakan untuk men-display list data project, disini kita akan menggunakan **component prop**, **prop** adalah cara parent component untuk melewatkan/menurunkan data kepada child component dibawahnya.
+
+Kita akan membuat component class baru diatas component parent nya:
+
+	class Project extends Component {
+		render() {
+			return(
+				<div>{this.props.project.title}</div>
+			)
+		}
+	};
+	
+**Keterangan**
+
+* Kode diatas adalah child component baru yang kita buat, child component ini akan kita gunakan untuk me-list data project yang ada, dengan menggunakan **prop** ```{this.props.project.title}``` sehingga data dari hasil **.map** di parent component bisa dilewatkan kesini.
+
+* **this**: Component children masih dapat mengakses **this**	dan juga **props** untuk melewatkan data dari parent ke children, contoh ```this.props``` beda nya dengan ```this.state```, **state** berlaku internal component, tidak antar component.
+
+* **props**: Digunakan component parent untuk melewatkan datanya ke component children.
+
+* **project**: Adalah nama atribut dari component parents hasil dari method **.map** (loop).
+
+* **title**: Adalah nama key dari object title, seperti description, image dsb.
+
+
+Kita akan membuat ```console.log('this.props', this.props)``` untuk membuktikan **isi** dari this.props. Letakkan di bawah render():
+
+	render() {
+		console.log('this.props', this.props);
+	}
+	
+Kemudian rubah **tag div** pada parent component menjadi **tag component** ```<Project />``` sbb:
+
+	return (
+		<Project key={PROJECT.id} project={PROJECT} />
+	)	
+
+simpan, restart browser dan cek di console tab.
+
+Anda lihat this.props > object di log tiga kali untuk masing-masing project yang berisi informasi tentang project itu sendiri.
+
+Sekarang kita akan merender image, description dan link, kita menggunakan **local constants** untuk masing-masing value didalam render method dengan menggunakan **destructuring syntax** sbb:
+
+	const { title, image, description, link } = this.props.project;
+	
+kode diatas sama dengan jika kita menulis kode seperti ini:
+
+	const title = this.props.project.title;
+	const image = this.props.project.image;
+	const description = this.props.project.description;
+	const link = this.props.project.link;
+
+jadi kita membuatnya lebih singkat dan clean.
+
+Kemudian kita tampilkan dibawah return dari child component sbb:
+
+	return (
+      <div>
+        <h3>{title}</h3>
+        <img src={image} alt="profile" />
+        <p>{description}</p>
+        <a href={link}>{link}</a>
+      </div>
+    )
+	
+Cek pada browser 3000, kemudian kita beri style sbb:
+
+	return (
+		<div style={{ display: 'inline-block', width: 300, margin: 10 }}>
+			<h3>{title}</h3>
+			<img src={image} alt="profile" style={{ width: 200, height: 120 }} />
+			<p>{description}</p>
+			<a href={link}>{link}</a>
+		</div>
+	)
+
+Kemudian cek lagi pada browser 3000.
+
+
+
+
+
+
 
 
 

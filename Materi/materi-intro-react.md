@@ -958,6 +958,246 @@ Cek pada browser 3000, kemudian kita beri style sbb:
 
 Kemudian cek lagi pada browser 3000.
 
+<br>
+
+## Social Media Icon
+
+
+Buatlah file baru socialProfile.js dibawah folder data, kemudian update file sbb:
+
+	import emailIcon from '../assets/email_icon.png';
+	import githubIcon from '../assets/github_icon.png';
+	import linkedinIcon from '../assets/linkedin_icon.png';
+	import twitterIcon from '../assets/twitter_icon.png';
+
+	const SOCIAL_PROFILES = [
+		{
+			id: 1,
+			link: 'mailto:dkcodehelper@gmail.com',
+			image: emailIcon
+		},
+		{
+			id: 2,
+			link: 'https://github.com/15Dkatz',
+			image: githubIcon
+		},
+		{
+			id: 3,
+			link: 'https://www.linkedin.com/in/david-katz-sf',
+			image: linkedinIcon
+		},
+		{
+			id: 4,
+			link: 'https://twitter.com/dkcodehelper',
+			image: twitterIcon
+		}
+	];
+
+	export default SOCIAL_PROFILES;
+
+Silahkan gunakan image icon untuk email, github, linkedin, twitter yang sudah saya sediakan, gunakan link sosmed anda masing-masing.
+
+
+## Social Profile Component.
+
+Sekarang kita akan membuat Component baru yaitu SocialProfile, dengan membuat file baru **SocialProfile.jd** dibawah folder src. Gunakan huruf **S** besar dengan menggunakan Convention (aturan baku) untuk **React Component**, sama seperti nama **Class**.  
+
+Update kode nya sbb:
+
+	import React from 'react';
+	import SOCIAL_PROFILES from '../data/socialProfiles';
+
+	const SocialProfile = props => {
+		const { link, image } = props.socialProfile;
+
+		return (
+			<span>
+				<a href={link}>
+					<img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
+				</a>
+			</span>
+		)
+	}
+
+	const SocialProfiles = () => (
+		<div>
+			<h2>Connect with me!</h2>
+			<div>
+				{
+					SOCIAL_PROFILES.map(SOCIAL_PROFILE => {
+						return <SocialProfile key={SOCIAL_PROFILE.id} socialProfile={SOCIAL_PROFILE} />;
+					})
+				}
+			</div>
+		</div>
+	)
+
+	export default SocialProfiles;
+
+
+**Kembali ke file App.js** 
+
+* Import social profile ke dalam file app.js
+
+		import SocialProfiles from './SocialProfiles';
+
+* Kemudian tambahkan element component **socialProfile** pada App.js dibawah element component **Projects**:
+
+		}
+			<hr />
+			<Projects />
+			<hr />
+			<SocialProfile />
+		</div>
+
+Test di browser 3000.
+
+Kita harus menambahkan style untuk menambahkan icon-icon tsb.
+
+Kembali ke file **SocialProfile.js** tambahkan style sbb:
+
+	return (
+    <span>
+      <a href={link}>
+        <img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
+      </a>
+    </span>
+  )
+
+**Keterangan**
+
+* Tambahkan style ```style={{ width: 35, height: 35, margin: 10```, dengan menambahakn lebar, tinggi dan margin icon.
+
+* Ganti tag div menjadi tag span, agar 3 icon tsb menjadi sebaris (side by side).
+
+<br>
+
+## Style lanjutan.
+
+Tujuannya agar app terlihat lebih menarik dengan menggunakan CSS.
+
+Buatlah file baru **index.css** dibawah folder **public**.
+
+Update file index.css sbb:
+
+	body {
+		text-aligh: center;
+		font-size: 20px;
+		padding: 2.5%;
+	}
+
+
+kemudian buat lah link (referensi) file index.css ini ke file index.html, sbb:
+
+	<link rel="stylesheet" href="index.css">
+	
+dan test pada browser tampilan baru nya.
+
+
+Kita juga bisa refactor css nya: 
+
+1. Dengan memindahkan file index.css dari dalam folder **public** ke dalam folder **src**.
+2. Kemudian di file index.js di import ```import './index.css'```.
+3. Hapus link rel css sebelumnya.
+
+
+### Style Bootstrap.
+
+Buka web Bootstrap di getbootstrap.com > klik **Documentation** > Copy link css.
+
+Kemudian paste kan di file index.html di dalam element 
+
+	<head>
+		...
+		...
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+	</head>
+
+
+kemudian refresh browser, tampilan akan berubah sesuai dengan ***bootstrap***.
+
+
+### Style Font
+
+Referensi: **https://fonts.google.com/**, silahkan gunakan font sesuai dengan keinginan anda.
+
+Contoh font:
+
+	* economica-bold.ttf.
+	* roboto-condensed.ttf.
+	
+Kita dapat men-define global font-faces dengan menggunakan sintax ```@font-face```. 
+
+Seperti sbb:
+
+	@font-face {
+		font-family: RobotoCondensed.light.tff;
+		src: url(assets/roboto-condesed.light.tff);
+		font-weight: 800;
+	}
+	
+kemudian font kedua:
+
+	@font-face {
+		font-familiy: EconomicaBold;
+		src: url(assets/economica-bold.tff);
+	}
+
+Selanjutnya untuk me-apply font ini berjalan pada seluruh element web, kita tambahkan pada css body sbb:
+
+	body {
+		...
+		...
+		
+		font-family: 'RobotoCondensed';
+	}
+	
+Dan
+
+	h1,h2,h3,h4,h5 {
+		font-family: 'EconomicaBold';
+	}
+
+
+Cek tampilan baru pada browser.
+
+
+### Photo Profile
+
+Kita akan menambahkan Photo profile, silahkan gunakan foto anda masing-masing sebagai profile portfolion anda dan simpan pada folder assets.
+
+lanjut anda import kedalam file App.js:
+
+	import profile from './assets/profile.png';
+	
+atau sesuaikan dengan nama profile anda masing-masing.
+
+Tambahkan Tag ```<image />``` pada "render method":
+
+	<img src={profile} alt='profile-image' />
+	
+
+Untuk menambahkan **style** kita akan menggunakan **className** yang akan kita **target** dan **define** pada file **css**.
+
+Pada file index.css update css sbb:
+
+	.profile {
+		width: 200px;
+		height: 200px;
+		border-radius: 100px;
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 

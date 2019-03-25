@@ -2,19 +2,26 @@
 
 # ReactJS.
 
-Link: https://reactjs.org/
+* Link: https://reactjs.org/
+
+* Local path Materi: Desktop>01-KelasFulstack>Materi>materi-intro-react.md.
+
+* Local path ProjectCase1: Desktop>01-KelasFulstack>project-react>portfolio.
+
+* Local path ProjectCase2: .
+
 
 ## Apa yang anda dapat pada Pelatihan ini.
 
-Satu
+**Satu**
 
 > Pelatihan ini memiliki satu tujuan menyeluruh: yaitu memberikan Anda **pengetahuan dasar** untuk menjadi **React Developer**.
 
-Dua
+**Dua**
 
 > Setelah pelatihan ini anda akan tahu cara kerja React sebagai framework dan engine.
 
-Tiga
+**Tiga**
 
 > Bagaimana kerja React dibelakang layar, bagaimana React cocok dengan rancana besar sebuah web development. 
 

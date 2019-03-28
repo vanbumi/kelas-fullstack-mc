@@ -69,7 +69,7 @@ Cara setup agar code editor bisa dibuka di browser:
 		
 **3. Node.js** download link: https://nodejs.org/en/download/
 
-Cara cek version:
+Setelah node terinstal sempurna kemudian cek version dengan cara sbb:
 		
 	node -v
 	# harus `v8.8.1` or higher.

@@ -2,13 +2,11 @@
 
 # ReactJS.
 
-* Link: https://reactjs.org/
-
-* Local path Materi: Desktop>01-KelasFulstack>Materi>materi-intro-react.md.
-
-* Local path ProjectCase1: Desktop>01-KelasFulstack>project-react>portfolio.
-
-* Local path ProjectCase2: .
+* Official Link React : https://reactjs.org/
+* Done version: <https://portfoliofundamental.herokuapp.com/>. 
+* Local path Materi: Desktop > 01-KelasFulstack > Materi > materi-intro-react.md.
+* Local path ProjectCase1: Desktop > 01-KelasFulstack > project-react > portfolio.
+* Local path ProjectCase2: Desktop > 01-KelasFulstack > project-react > ....
 
 
 ## Apa yang anda dapat pada Pelatihan ini.
@@ -66,14 +64,14 @@ Cara setup agar code editor bisa dibuka di browser:
 		
 	* Terminal (MacOS & Linux user). 
 	* GitBash (Windows user), cara instal GitBash: https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal
-		
+
 **3. Node.js** download link: https://nodejs.org/en/download/
 
 Setelah node terinstal sempurna kemudian cek version dengan cara sbb:
 		
 	node -v
 	# harus `v8.8.1` or higher.
-
+	
 	npm -v
 	# harus `v5.4.2` or higher.
 
@@ -102,15 +100,15 @@ Pada Terminal buatlah folder project baru anda:
 Menggunakan npx:
 
 	npx --help
-	
+
 Membuat aplikasi React:
 
 	npx create-react-app portfolio
-	
+
 setelah instalasi selesai:
 
 	cd portfolio
-	
+
 buka code editor dengan perintah code spasi titik.
 
 	code .
@@ -137,7 +135,7 @@ kembali ke Terminal dan ketikan perintah sbb:
 	atau
 	
 	yarn start
-	
+
 dan jendela browser localhost:3000 dan aplikasi React akan terbuka.
 
 Buka folder public > index.html, akan terlihat struktur kode halaman React tsb.
@@ -147,20 +145,21 @@ anda akan lihat tidak ada konten di dalam file index.html ini, karena konten di 
 Konten di insert dari halaman **index.js**, dimana terdapat function **ReactDOM** yang akan merender **react code** dan menyisipkan ke dalam html:
 
 	ReactDOM.render(<App />, document.getElementById('root'));
-	
+
 - dari function diatas yang menjadi target element adalah **root** sebagai id selector.	
 - function diatas adalah **JSX** (JavaScript Extention) yang digunakan untuk menyisipkan element atau kode html.
 - dari function diatas di render <App /> dimana element App di import dari halaman App.js:
 
 		import App from './App';
 		
+
 Selain App di import juga:
 
 	import React from 'react';
 	import ReactDOM from 'react-dom';
 	import './index.css';
 	import * as serviceWorker from './serviceWorker';		
-	
+
 <br>	
 	
 **Next!** buka folder src > App.js, dan tambahkan kode sbb diatas ```<img >``` :
@@ -187,7 +186,7 @@ Buat file baru **index.js**
 Import react library ke dalam file index.js:
 
 	import React from 'react';
-		
+
 Import react DOM library:
 
 	import ReactDOM from 'react-dom';
@@ -195,7 +194,7 @@ Import react DOM library:
 Render element html dengan ReactDOM:
 
 	ReactDOM.render(<div>Coba React</div>, document.getElementById('root'));
-			
+
 Keterangan:
 
 Kita menggunakan ```ReactDOM.render()``` untuk merender JSX kedalam html dan menampilkannya:  ```<div>Coba React</div>``` pada argument pertama, pada argument kedua kita spesifikasi lokasi menempatkannya.
@@ -207,9 +206,10 @@ Kode lengkap sbb:
 		import ReactDOM from 'react-dom';
 		
 		ReactDOM.render(<div>Coba React</div>, document.getElementById('root'));
-		
-		
-		
+
+
+​		
+​		
 
 Cek di browser update akan otomatis tampil "Coba React".
 
@@ -223,7 +223,7 @@ Untuk membuat React component kita akan membuat file baru App.js :
 
 
 	import React, { Component } from 'react';
-	
+
 
 Pada file App.js ini kita harus import React Library, selanjutnya kita harus import Component class, dengan menuliskanya antara { } sebagai opsional import.
 
@@ -244,7 +244,7 @@ Selanjutnya membuat **react component** yang ditulis sebagai javascript class, a
 	}
 	
 	export default App;
-	
+
 Keterangan:
 
 ```class App extends Component {}```: Component pada React adalah sebuah "class" yang "extends" dari main class yaitu "Component" class.
@@ -260,7 +260,7 @@ Keterangan:
 Import file App.js ke dalam file index.js:
 
 	import App from './App';
-	
+
 Update react dom sbb:
 
 	ReactDOM.render(<App />, documen.getElementById('root'));
@@ -271,7 +271,7 @@ Kode lengkapnya sbb:
 	import React from 'react';
 	import ReactDOM from 'react-dom';
 	import App from './App';
-
+	
 	ReactDOM.render(<App />, document.getElementById('root'));
 
 
@@ -279,7 +279,7 @@ Simpan dan cek di browser:
 
 	John Due
 	I am Software Engineer
-
+	
 	I am Looking forward to work in your meaningful projects.
 
 Bila kita klik kanan > inspect > body > div id = root:	
@@ -412,7 +412,7 @@ Buka file index.js, untuk memahami bagaimana class bekerja, buat sebuah class An
 	
 	// call speak method
 	animal1.speak();
-	
+
 Cobalah di terminal jalankan ```npm start```.
 	
 Pada browser klik kanan > inspection > buka tab Console dan refresh browser untuk melihat hasil console.log:
@@ -422,7 +422,7 @@ Pada browser klik kanan > inspection > buka tab Console dan refresh browser untu
 Kemudian kita akan melihat aktual instance dari Animal1 dengan console.log:
 
 	console.log(animal1);
-	
+
 lihat hasilnya pada tab Console.
 
 **Penjelasan kode**
@@ -468,7 +468,7 @@ Kita akan membuat class baru extends dari class Animal:
 	
 	// to see actual new instance
 	console.log(lion1);
-	
+
 Simpan dan lihat hasilnya pada tab console.
 
 <br>
@@ -492,7 +492,7 @@ Pada file App.js:
 	// tampilkan 
 	console.log('reqularClassInstance', reqularClassInstance);
 	console.log('componentClassInstance', componentClassInstance);
-	
+
 Cek hasilnya pada tab console.
 
 <br>
@@ -529,7 +529,7 @@ Pertama-tama kita tambahkan sebuah constructor pada **app component** terlebih d
 		}
 	
 		...
-	
+
 sampai disini bila anda simpan dan cek pada browser maka akan ada error "*TypeError: Cannot set property 'state' of undefined*".
 
 Solusi nya kita harus menambahkan **super property** pada constructor untuk memanggil parent class constructor method dari component induknya, atau invoke constructor of the parent component class:
@@ -557,23 +557,23 @@ Update kode diatas sbb:
 kemudian pada render method kita update kode nya sbb:
 
 	ender() {
-    return (
-      <div>
-        <img src={profile} alt="profile" className="profile" />
-        <h1>John Doe</h1>
-        <p>I am Software Engineer</p>
-        <p>I am Looking forward to work in your meaningful projects.</p>
-        {
-          this.state.displayBio ? (
-            <div>
-              <p>I live in Bekasi, and doing code everyday</p>
-              <p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
-              <p>If I am not ngoding I will sleep or watch the TV.</p>
-              <button onClick={this.toggleDisplayBio}>Show less</button>
-            </div>
-          ) : null
+	return (
+	  <div>
+	    <img src={profile} alt="profile" className="profile" />
+	    <h1>John Doe</h1>
+	    <p>I am Software Engineer</p>
+	    <p>I am Looking forward to work in your meaningful projects.</p>
+	    {
+	      this.state.displayBio ? (
+	        <div>
+	          <p>I live in Bekasi, and doing code everyday</p>
+	          <p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+	          <p>If I am not ngoding I will sleep or watch the TV.</p>
+	          <button onClick={this.toggleDisplayBio}>Show less</button>
+	        </div>
+	      ) : null
 				...
-					
+
 **Keterangan**
 
 Kita menggunakan one line if statement:
@@ -629,7 +629,7 @@ Kita akan gunakan **onClick** property pada element button:
 	<div>
 		<button onClick={this.readMore}>Read more</button>
 	</div>
-	
+
 Simpan, cek pada browser 3000, klik button **read more**, akan muncul error:
 
 <span style="color: red; font-weight: bold">TypeError: Cannot read property 'setState' of undefined. <br><br> > 10 | this.setState({ display: true })</span>
@@ -642,7 +642,7 @@ Kita akan melakukan test dengan melakukan console.log terhadap **this** object p
 		console.log('readMore this', this);
 		//this.setState({ displayBio: true });
 	}
-	
+
 dan juga kita akan test **this** object pada **constructor** sebagai perbandingan:
 
 	constructor() {
@@ -651,7 +651,7 @@ dan juga kita akan test **this** object pada **constructor** sebagai perbandinga
 		
 		console.log('Component this', this);
 	}
-	
+
 Simpan dan lihat pada console tab:
 
 Pada **Component this** adalah **app** dan memiliki akses ke **setState** function, sedangkan bila kita klik Read more button **readMore this undefined**, karena tidak memiliki akses ke **class app component**.
@@ -661,7 +661,7 @@ Pada **Component this** adalah **app** dan memiliki akses ke **setState** functi
 Solusi nya JavaScript memiliki special **.bind** method, yang akan pass **this** object, dari satu object ke yang lainnya. Dengan cara this.helperMethod di bind(this) atau dengan bahasa kode nya sbb:
 
 	this.readMore.bind(this);
-	
+
 jd dengan script diatas this dari component class akan dibawa (pass) ke dalam helper method yang kita buat. Lanjut kita set sbb:
 
 	this.readMore = this.readMore.bind(this);
@@ -671,7 +671,7 @@ Dengan demikian this pada setState tidak lagi undefined:
 	readMore() {
 		this.setState({ ... })
 	}
-	
+
 Oke ?
 
 Anda lihat juga paragraph bio muncul.
@@ -682,26 +682,28 @@ Pada akhir paragraph tambahkan button **Show less**.
 
 	<button>Show less</button>
 
-	
+
+​	
 Kita akan membuat helper method baru **toggleDisplayBio()**
 
 	toggleDisplayBio() {
 		this.setState({ displayBio: !this.state.displayBio })
 	}
-	
+
 > ***)** **!** Operator kita gunakan untuk menyatakan kondisi sebaliknya, true to false or false to true.
 
 readMore method bisa kita hapus, jangan lupa untuk bind toggleDisplayBio() method:
 
 	this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-	
+
 Kemudian tambahkan onClick pada button **Show less** dan **Show more** :
 
 	<button onClick={this.toggleDisplayBio}>Show less</button>
 	
 	<button onClick={this.toggleDisplayBio}>Show more</button>
-	
-	
+
+
+​	
 Simpan dan cek klik Show more dan Show less.
 
 <br>
@@ -718,16 +720,16 @@ Jadi refactor kode diatas pada file App.js, kode lengkapnya sbb:
 	import Projects from './Projects';
 	import SocialProfile from './SocialProfiles';
 	import profile from './assets/profile.png';
-
+	
 	class App extends Component {
-
+	
 		state = { displayBio: false }
-
+	
 		// helper method dirubah menjadi function arrow.
 		toggleDisplayBio = () => {
 			this.setState({ displayBio: !this.state.displayBio });
 		}
-
+	
 		render() {
 			return (
 				<div>
@@ -757,7 +759,7 @@ Jadi refactor kode diatas pada file App.js, kode lengkapnya sbb:
 			)
 		}
 	}
-
+	
 	export default App;
 
 Pastikan aplikasi masih berjalan di browser 3000.
@@ -818,7 +820,7 @@ Selanjutnya membuat data project dengan array, isi data array sesuai dengan proj
 			image: project3
 		}
 	];
-	
+
 **Keterangan:**	
 
 * Menggunakan SCREAM_CASE sebagai convention untuk global value pada JavaScript project dimana menggunakan huruf BESAR semua.
@@ -861,7 +863,7 @@ Update Project.js sbb:
 	}
 	
 	export default Projects;
-	
+
 Import Projects.js ini pada file App.js:
 
 Pada file App.js:
@@ -872,7 +874,7 @@ Tempatkan projects component di akhir render method, dibawah akhir kurung kurawa
 
 	<hr />
 	<Projects />
-	
+
 Test di browser 3000 lihat hasilnya.
 
 Klik kanan > inspection > <span style="color:red;">Warning: Each child in an array or interator should have a unique "key" prop.</span>
@@ -898,7 +900,7 @@ Kita akan membuat component class baru diatas component parent nya:
 			)
 		}
 	};
-	
+
 **Keterangan**
 
 * Kode diatas adalah child component baru yang kita buat, child component ini akan kita gunakan untuk me-list data project yang ada, dengan menggunakan **prop** ```{this.props.project.title}``` sehingga data dari hasil **.map** di parent component bisa dilewatkan kesini.
@@ -917,7 +919,7 @@ Kita akan membuat ```console.log('this.props', this.props)``` untuk membuktikan 
 	render() {
 		console.log('this.props', this.props);
 	}
-	
+
 Kemudian rubah **tag div** pada parent component menjadi **tag component** ```<Project />``` sbb:
 
 	return (
@@ -931,7 +933,7 @@ Anda lihat this.props > object di log tiga kali untuk masing-masing project yang
 Sekarang kita akan merender image, description dan link, kita menggunakan **local constants** untuk masing-masing value didalam render method dengan menggunakan **destructuring syntax** sbb:
 
 	const { title, image, description, link } = this.props.project;
-	
+
 kode diatas sama dengan jika kita menulis kode seperti ini:
 
 	const title = this.props.project.title;
@@ -944,14 +946,14 @@ jadi kita membuatnya lebih singkat dan clean.
 Kemudian kita tampilkan dibawah return dari child component sbb:
 
 	return (
-      <div>
-        <h3>{title}</h3>
-        <img src={image} alt="profile" />
-        <p>{description}</p>
-        <a href={link}>{link}</a>
-      </div>
-    )
-	
+	  <div>
+	    <h3>{title}</h3>
+	    <img src={image} alt="profile" />
+	    <p>{description}</p>
+	    <a href={link}>{link}</a>
+	  </div>
+	)
+
 Cek pada browser 3000, kemudian kita beri style sbb:
 
 	return (
@@ -976,7 +978,7 @@ Buatlah file baru socialProfile.js dibawah folder data, kemudian update file sbb
 	import githubIcon from '../assets/github_icon.png';
 	import linkedinIcon from '../assets/linkedin_icon.png';
 	import twitterIcon from '../assets/twitter_icon.png';
-
+	
 	const SOCIAL_PROFILES = [
 		{
 			id: 1,
@@ -999,7 +1001,7 @@ Buatlah file baru socialProfile.js dibawah folder data, kemudian update file sbb
 			image: twitterIcon
 		}
 	];
-
+	
 	export default SOCIAL_PROFILES;
 
 Silahkan gunakan image icon untuk email, github, linkedin, twitter yang sudah saya sediakan, gunakan link sosmed anda masing-masing.
@@ -1013,10 +1015,10 @@ Update kode nya sbb:
 
 	import React from 'react';
 	import SOCIAL_PROFILES from '../data/socialProfiles';
-
+	
 	const SocialProfile = props => {
 		const { link, image } = props.socialProfile;
-
+	
 		return (
 			<span>
 				<a href={link}>
@@ -1025,7 +1027,7 @@ Update kode nya sbb:
 			</span>
 		)
 	}
-
+	
 	const SocialProfiles = () => (
 		<div>
 			<h2>Connect with me!</h2>
@@ -1038,7 +1040,7 @@ Update kode nya sbb:
 			</div>
 		</div>
 	)
-
+	
 	export default SocialProfiles;
 
 
@@ -1064,11 +1066,11 @@ Kita harus menambahkan style untuk menambahkan icon-icon tsb.
 Kembali ke file **SocialProfile.js** tambahkan style sbb:
 
 	return (
-    <span>
-      <a href={link}>
-        <img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
-      </a>
-    </span>
+	<span>
+	  <a href={link}>
+	    <img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
+	  </a>
+	</span>
   )
 
 **Keterangan**
@@ -1097,7 +1099,7 @@ Update file index.css sbb:
 kemudian buat lah link (referensi) file index.css ini ke file index.html, sbb:
 
 	<link rel="stylesheet" href="index.css">
-	
+
 dan test pada browser tampilan baru nya.
 
 
@@ -1134,7 +1136,7 @@ Contoh font:
 
 	* economica-bold.ttf.
 	* roboto-condensed.ttf.
-	
+
 Kita dapat men-define global font-faces dengan menggunakan sintax ```@font-face```. 
 
 Seperti sbb:
@@ -1144,7 +1146,7 @@ Seperti sbb:
 		src: url(assets/roboto-condesed.light.tff);
 		font-weight: 800;
 	}
-	
+
 kemudian font kedua:
 
 	@font-face {
@@ -1160,7 +1162,7 @@ Selanjutnya untuk me-apply font ini berjalan pada seluruh element web, kita tamb
 		
 		font-family: 'RobotoCondensed';
 	}
-	
+
 Dan
 
 	h1,h2,h3,h4,h5 {
@@ -1178,13 +1180,13 @@ Kita akan menambahkan Photo profile, silahkan gunakan foto anda masing-masing se
 lanjut anda import kedalam file App.js:
 
 	import profile from './assets/profile.png';
-	
+
 atau sesuaikan dengan nama profile anda masing-masing.
 
 Tambahkan Tag ```<image />``` pada "render method":
 
 	<img src={profile} alt='profile-image' />
-	
+
 
 Untuk menambahkan **style** kita akan menggunakan **className** yang akan kita **target** dan **define** pada file **css**.
 

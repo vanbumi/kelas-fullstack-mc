@@ -25,7 +25,7 @@ contoh:
 * Quick & Easy Schema Iteration dibandingkan dengan tradisional database.
 * Scalability & Performance.
 * Object-oriented, sangat mirip dengan JavaScript code.
-* Agile Development -> Accomdates large volume of rapidly changing structure, semi-structure dan unstructured data, artinya mudah untuk menambahkan perubahan pada schema database yang sudah ada.
+* Agile Development -> Accomodates large volume of rapidly changing structure, semi-structure dan unstructured data, artinya mudah untuk menambahkan perubahan pada schema database yang sudah ada.
 
 Contoh:
 
@@ -35,7 +35,7 @@ Contoh:
 		firstName: "Dyo",
 		lastName: "Bumi"
 	}
-	
+
 Update schema:
 
 	UserSchema
@@ -76,7 +76,7 @@ Keterangan: Masing masing record memiliki property yang berbeda dengan record ya
 #### sort(), limit()
 
 	db.student.find({}).sort({name: 1}).limit(2)
-	
+
 ### Membuat Database baru
 
 Buka Terminal dan ketikan mongo
@@ -84,27 +84,27 @@ Buka Terminal dan ketikan mongo
 Membuat database baru dan beri nama 'MedioCademy':
 
 	use mediocademy
-	
+
 Untuk pindah ke database lain:
 
 	use namaDatabaseLain
-	
+
 Untuk mengetahui kita berada di database apa:
 
 	db
-	
+
 Untuk menampilkan list database yang ada pada local komputer:
 
 	show dbs
-	
+
 Membuat collection baru beri nama 'student':
 
 	db.createCollection("student")
-	
+
 Menampilkan collection pada database yang bersangkutan:
 
 	show collections
-	
+
 Input data ke dalam collection student:
 
 	db.student.insert({
@@ -134,23 +134,23 @@ Input data ke dalam collection student:
 		batch: 1,
 		silabus: ['basic']
 	})
-	
+
 ### Menampilkan data collection
 
 	db.student.find().pretty()
-	
+
 #### Menampilkan student dengan nama Ersya:
 
 	db.student.find({'name': 'Ersya'})
-	
+
 atau	
 
 	db.student.find({'name': 'Ersya'}).pretty()
-	
-#### Filter dengan $gt & $lt:
+
+#### Filter dengan ```$gt & $lt```:
 
 	db.student.find({'batch':{$lt: 3}}).pretty()
-
+	
 	db.student.find({'batch':{$gt: 2}}).pretty()
 
 #### Filter dengan #in command:
@@ -158,7 +158,7 @@ atau
 	db.student.find({silabus:{$in:['basic']}})
 	
 	db.student.find({silabus:{$in:['basic', 'intermediate']}})
-	
+
 #### Sort dan Limit:
 
 **Sort**
@@ -169,19 +169,55 @@ atau
 	
 	db.student.find({}).sort({name: 1}) //
 	db.student.find({}).sort({name: -1}) //
-	
+
 **Limit**	
 	
 	db.student.find({}).sort({name: 1}).limit(2)
-	
+
 More query mongodb at:
 
-	https://docs.mongodb.com/manual/tutorial/query-documents/
-	
-	
+https://docs.mongodb.com/manual/tutorial/query-documents/
+
+### Select all documents di dalam Collection
+
+	db.inventory.find( {} )
+
+### Specify Equality Condition
+
+	db.inventory.find( { status: "D" } )
+
+### Specify Conditions Using Query Operators¶
+
+	db.inventory.find( { status: { $in: [ "A", "D" ] } } )
+
+### Specify AND Conditions
+
+	db.inventory.find( { status: "A", qty: { $lt: 30 } } )
+
+### Specify OR Conditions¶
+
+
+
 ### Menghapus data collection
 
-	db.siswa.deteleOne({
+	db.siswa.deleteOne({
 		// data
 	})
-	
+
+
+### Latihan
+
+Buat Datase: Sekolah
+
+Buat Collection: Siswa
+
+```
+db.siswa.insertMany([
+   { nama: "Budi", kelas: 12, ekskul: ["blank", "red"], matpel: [ "Matematika", "Fisika", "Kimia", "Komputer" ] },
+   { nama: "Wati", kelas: 10, ekskul: ["blank", "red"], matpel: [ "Matematika", "Fisika", "Kimia", "Komputer" ] },
+   { nama: "Brandon", kelas: 11, ekskul: ["blank", "red"], matpel: [ "Matematika", "Fisika", "Kimia", "Komputer" ] },
+   { nama: "Vadya", kelas: 9, ekskul: ["blank", "red"], matpel: [ "Matematika", "Fisika", "Kimia", "Komputer" ] },
+   { nama: "Erya", kelas: 8, ekskul: ["blank", "red"], matpel: [ "Matematika", "Fisika", "Kimia", "Komputer" ] },
+]);
+```
+

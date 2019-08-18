@@ -50,18 +50,33 @@ Update schema:
 
 <br>
 
-![mongo](img/mongo.png)
+![mongo](/Users/dyo-medio/Desktop/01-KelasFullstack/img/mongo.png)
 
 Keterangan: Masing masing record memiliki property yang berbeda dengan record yang lain, hal ini tidak sama dengan database RDBMS tradisional database.
 
 <br>
 
 ## MongoDB database
-#### -> Terdiri dari kumpulan Collection.
+#### -> Terdiri dari kumpulan Collections.
 #### -> Masing2 Collection menyimpan kumpulan "Record".
 #### -> Masing2 Record adalah kumpulan dari "JavaScript Object".
 #### -> Yang di sebut JSON. 
 #### -> JSON Adalah kumpulan dari Key Value Pair (Pasangan Key dan Value).
+
+
+
+The following table shows the relationship of RDBMS terminology with MongoDB.
+
+|    RDBMS    |                         MongoDB                          |
+| :---------: | :------------------------------------------------------: |
+|  Database   |                         Database                         |
+|    Table    |                        Collection                        |
+|  Tuple/Row  |                         Document                         |
+|   column    |                          Field                           |
+| Table Join  |                    Embedded Documents                    |
+| Primary Key | Primary Key (Default key _id provided by mongodb itself) |
+
+
 
 ## Query Mongodb
 
@@ -203,6 +218,151 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
 	db.siswa.deleteOne({
 		// data
 	})
+
+
+
+
+Artikel ini adalah bagian dari seri **Tutorial MongoDB**
+
+http://www.timposu.com/mongodb-update-document/
+
+
+
+- [Mengenal MongoDB](http://www.timposu.com/mengenal-mongodb/)
+- [MongoDB - Cara Install MongoDB di Windows](http://www.timposu.com/cara-install-mongodb-windows/)
+- [MongoDB - Cara Install MongoDB Di Linux](http://www.timposu.com/cara-install-mongodb-di-linux/)
+- MongoDB - Perintah Dasar MongoDB
+- [MongoDB - Membuat Database](http://www.timposu.com/membuat-database-mongodb/)
+- [MongoDB - Menghapus Database](http://www.timposu.com/menghapus-database-mongodb/)
+- [MongoDB - Membuat Collection](http://www.timposu.com/membuat-collection-mongodb/)
+- [MongoDB - Menghapus Collection](http://www.timposu.com/menghapus-collection-mongodb/)
+- [MongoDB - Tipe Data](http://www.timposu.com/tipe-data-mongodb/)
+- [MongoDB - Insert Data](http://www.timposu.com/mongodb-insert-document/)
+- [MongoDB - Query di MongoDB](http://www.timposu.com/mongodb-query/)
+- [MongoDB - Update Document](http://www.timposu.com/mongodb-update-document/)
+- [MongoDB - Delete Document](http://www.timposu.com/mongodb-delete/)
+- [MongoDB - Menggunakan Limit & Skip](http://www.timposu.com/mongodb-menggunakan-limit-and-skip/)
+- [MongoDB - Mengurutkan/Sort Document MongoDB](http://www.timposu.com/mongodb-mengurutkan-sort-document-mongodb/)
+
+Ini adalah tutorial singkat MongoDB, yang berisi perintah-perintah dasar MongoDB
+
+## melihat database
+
+```
+db
+```
+
+## membuat database
+
+contoh membuat collection dengan nama siswa
+
+```
+use  siswa
+```
+
+## menghapus database
+
+```
+db.dropDatabase()
+```
+
+## insert data
+
+contoh membuat tabel sekaligus melakukan insert
+
+```
+db.siswa.insert(
+    {
+        "nama":"Ucup",
+        "alamat":"Jln. Loyo Selalu",
+        "usia":13
+    }
+)
+```
+
+Id key otomatis dibuatkan
+
+
+
+## insert data array
+
+```
+db.siswa.insert(
+    [{
+        "nama":"Azwar Anas",
+        "alamat":"Jln. Slamet Riyadi",
+        "usia":15
+     },
+     {
+        "nama":"Abd Munir",
+        "alamat":"Jln. Sutoyo",
+        "usia":17
+     }    
+    ]
+)
+```
+
+## melihat daftar collection dalam database
+
+```
+show collections
+```
+
+## melihat isi collection
+
+```
+db.siswa.find()
+```
+
+## melihat isi collection dalam bentuk JSON
+
+```
+db.siswa.find().pretty()
+```
+
+## melihat isi collection hanya 1 result
+
+```
+db.siswa.findOne()
+```
+
+atau menampilkan dengan id tertentu
+
+```
+db.siswa.findOne(
+ {"_id" : ObjectId("56337621a5741ce990f98a12")}
+)
+```
+
+
+
+## menghapus data (remove)
+
+```
+db.siswa.remove({
+    "_id" : ObjectId("56337621a5741ce990f98a12")
+})
+```
+
+## mengubah data (update)
+
+```
+db.siswa.update(
+    {"_id" : ObjectId("56337621a5741ce990f98a11")},
+    {
+     "nama" : "Azwar Anas",
+     "alamat" : "Jln. Taubat Nasuha",
+     "usia" : 15
+    }
+)
+```
+
+## menghapus collection
+
+```
+db.siswa.drop()
+```
+
 
 
 ### Latihan

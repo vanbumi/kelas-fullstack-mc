@@ -56,7 +56,7 @@ Buatlah file baru pada root dan beri nama "script.js".
 Kemudian buatlah code sbb:
 
 	console.log("Hello, world!!");
-	
+
 
 Jangan lupa referensikan file script.js ke dalam html dan tempatkan sebelum element ```</body>``` sbb:
 
@@ -71,12 +71,12 @@ Jangan lupa referensikan file script.js ke dalam html dan tempatkan sebelum elem
 Untuk menempatkan dimana akan di tampilkan hasil manipulasi JS yaitu dengan cara memberikan **ID** pada element, contoh:
 
 	<h2 id="heading"></h2>
-	
+
 
 Buka file script.js dan update kode nya sbb:
 
 	document.getElementById('heading').innerHTML = "Hello, JS!!"
-	
+
 Simpan dan refresh browser, maka akan muncul heading 2 "Hello, JS!!".
 	
 <br>
@@ -88,22 +88,22 @@ Buka file script.js dan tuliskan variable sbb:
 
 	var name = "Dyo";
 	console.log(name);
-	
+
 simpan dan refresh console
 
 	var lastName = "Bumi";
 	console.log(lastName);
-	
+
 simpan dan refresh console	
 
 	var age = 26;
 	console.log(age);
-	
+
 simpan dan refresh console;
 
 	var fullName = name + lastName; // concatenation.
 	console.log(fullName);
-	
+
 simpan dan refresh console;
 
 	var job = "Trainer";
@@ -111,8 +111,9 @@ simpan dan refresh console;
 	
 	var bio = "My name " + name + " " + lastName + " " + " my age " + age + " my job " + job;
 	console.log(bio);
-	
-	
+
+
+​	
 <br>
 
 ## Operator
@@ -135,15 +136,16 @@ Lanjutkan menulis kode di file script.js, jangan lupa kode sebelumnya di "commen
 	var y = 7;
 	var z = x + y;
 	console.log(z);
-	
-	
+
+
+​	
 **Perkalian**
 
 	var a = 5;
 	var b = 7;
 	var c = a * b;
 	console.log(c);
-	
+
 **Operator Aritmatik**
 
 	+ 
@@ -151,14 +153,14 @@ Lanjutkan menulis kode di file script.js, jangan lupa kode sebelumnya di "commen
 	/
 	++ increment
 	-- decrement
-	
+
 **Operator Assignment**
 
-| Oerator | Contoh  | Sama |        
+| Oerator | Contoh  | Sama |
 |----|---|---|---|
-| =  | x = y  | x = y     |      
-| += | x += y | x = x + y |      
-| -= | x -= y | x = x - y |      
+| =  | x = y  | x = y     |
+| += | x += y | x = x + y |
+| -= | x -= y | x = x - y |
 |	*= | x *= y | x = x * y |
 |	/= | x /= y | x = x / y |
 |	%= | x %= y | x = x % y |
@@ -169,7 +171,7 @@ Contoh:
 	var x = 10;
 	x += 5;
 	console.log(x);
-	
+
 maka hasil nya: ```15```	
 
 
@@ -188,7 +190,7 @@ maka hasil nya: ```15```
 	console.log(z);
 	
 	**Operator Comparation**
-	
+
 |	Operator |	Artinya	|
 |---|---|
 |	==	|	equal to value	|
@@ -306,12 +308,12 @@ Contoh 3:
 | True or False |
 | Top or Down |
 | etc... |
-	
+
 Contoh:
 
 	console.log(Boolean(10 > 9));	//hasilnya true
 	console.log(Boolean(10 > 19)); //hasilnya false
-	
+
 **Comparison dan Condition**
 
 | Comparation | Arti | Condition |
@@ -328,11 +330,11 @@ Contoh:
 	console.log(Boolean(-15)); // true
 	console.log(Boolean("Hello")); // true
 	console.log(Boolean("false")); // true
-
+	
 	console.log(Boolean(false)); // false
 	console.log(Boolean(true)); // true
 	console.log(Boolean("false")); // true
-	
+
 **Semua yang tanpa Nilai adalah False**	
 
 	var x = 0;
@@ -343,7 +345,7 @@ Contoh:
 	
 	var z = "NaN";
 	console.log(Boolean(z)); // true
-	
+
 ### Debugging Tools
 
 1. ```console.log()```.
@@ -354,7 +356,7 @@ Contoh 1:
 
 	var x = 0;
 	console.log(Boolean(x));
-	
+
 Contoh 2:	
 
 	var y = "";
@@ -363,7 +365,7 @@ Contoh 2:
 Contoh 3:
 
 	prompt("What is your name")
-	
+
 Contoh lain:
 
 	var name = prompt("What is your name");
@@ -371,7 +373,7 @@ Contoh lain:
 	
 	var name = prompt("What is your name");
 	alert.log(name);
-	
+
 <br>
 
 ## Switch Condition
@@ -391,16 +393,16 @@ Contoh lain:
 		default:
 			console.log('Not at all');
 	}
-	
+
 Kita gunakan prompt:
 
 	job = prompt("Apa profesi Dyo?")
-	
+
 Refresh browser dan jawab serta lihat hasilnya di console.
 
 
-	
-	
+​	
+​	
 
 
 
@@ -417,3 +419,4 @@ Refresh browser dan jawab serta lihat hasilnya di console.
 
 Full Copyright@MedioCademy, Hak Cipta dimiliki MedioCademy di lindungi undang-undang dilarang memperbanyak dan menyebarkan nya diluar ijin MedioCademy.com.
 
+prp

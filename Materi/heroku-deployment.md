@@ -54,6 +54,94 @@ Example hasil deploy: https://webstat.herokuapp.com
 
 
 
+```>``` Create .gitignore dan tambahkan:
+
+```javascript
+/node_modules
+npm-debug.log
+.DS_Store
+/.env
+```
+
+```>``` Update file package.json script sbb:
+
+```javascript
+"scripts": {
+  "start": "nodemon index.js"
+},
+```
+
+atau tergantung dari main file anda:
+
+```javascript
+"scripts": {
+   "start": "nodemon server.js"
+},
+```
+
+```>``` Create file Procfile pada folder root, kemudian update sbb;
+
+```javascript
+// Procfile
+web: node index.js
+
+// atau tergantung main file anda
+web: node server.js
+```
+
+```>``` Login ke Heroku dari Terminal
+
+```
+heroku login
+```
+
+```>``` Deploy ke Heroku:
+
+```
+heroku apps:create <nama_app_mu> 
+```
+
+```>``` Git
+
+```
+git add .
+git commmit -m "ready deploy to heroku"
+```
+
+```
+git push heroku master
+```
+
+```
+heroku open
+```
+
+```>``` Heroku logs
+
+```
+heroku logs
+```
+
+```>``` You can also verify by this command to check that our application is up and running.
+
+```
+heroku ps:scale web=1
+```
+
+```>``` You can also run on the local using the following command.
+
+```
+heroku local web
+```
+
+
+
+
+
+
+
+<br>
+
 ```II``` Cara 2:
 
 Tambahkan file dan folder:

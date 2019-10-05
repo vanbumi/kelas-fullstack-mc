@@ -1,0 +1,12 @@
+# JavaScript Fundamental
+
+## Scope
+
+
+
+
+
+
+
+
+

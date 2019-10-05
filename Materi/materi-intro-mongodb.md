@@ -86,7 +86,7 @@ The following table shows the relationship of RDBMS terminology with MongoDB.
 	
 	db.student.find({'name': 'Dyo'})
 	
-	db.student.find({'batch':{$gt:1}}) // gt: small than, lt: less than
+	db.student.find({'batch':{$gt:1}}) // gt: greater than, lt: less than
 
 #### sort(), limit()
 

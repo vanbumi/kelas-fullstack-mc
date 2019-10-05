@@ -26,23 +26,26 @@
 
 ```>``` Lanjut Git command:
 
-	git init 
+	git status
 	git add .
 	git commit -m "My site ready for heroku deployment." 	
-	heroku apps:create ....
+	heroku apps:create <nama_app_kamu>
 	git push heroku master
 
-Hasilnya:
+Setelah di push hasilnya seperti dibawah ini:
 
 	“remote: Verifying deploy…. done.” 
 
-Membuka web dari Terminal:
+Lanjut dengan membuka web dari Terminal:
 
 	heroku open
 
 
 
-Example hasil deploy: https://webstat.herokuapp.com
+Example hasil deploy: 
+
+* https://webstat.herokuapp.com
+* https://node-webapp-yk.herokuapp.com/
 
 <br><br>
 
@@ -98,12 +101,13 @@ heroku login
 ```>``` Deploy ke Heroku:
 
 ```
-heroku apps:create <nama_app_mu> 
+heroku apps:create nama_app_kamu 
 ```
 
 ```>``` Git
 
 ```
+git status
 git add .
 git commmit -m "ready deploy to heroku"
 ```
@@ -116,7 +120,7 @@ git push heroku master
 heroku open
 ```
 
-```>``` Heroku logs
+```>``` Apabila ada error .... lakukan **Heroku logs**
 
 ```
 heroku logs

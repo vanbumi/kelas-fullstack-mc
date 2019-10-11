@@ -1,12 +1,16 @@
-## Materi Pelatihan React Fundamental.
+## React Fundamental - mediocademy.com
 
 # ReactJS.
+
+
 
 * Official Link React : https://reactjs.org/
 * Done version: <https://portfoliofundamental.herokuapp.com/>. 
 * Local path Materi: Desktop > 01-KelasFulstack > Materi > materi-intro-react.md.
 * Local path ProjectCase1: Desktop > 01-KelasFulstack > project-react > portfolio.
 * Local path ProjectCase2: Desktop > 01-KelasFulstack > project-react > ....
+
+
 
 
 ## Apa yang anda dapat pada Pelatihan ini.
@@ -23,11 +27,13 @@
 
 > Bagaimana kerja React dibelakang layar, bagaimana React cocok dengan rancana besar sebuah web development. 
 
+
+
 ## Kenapa harus menjadi React Developer.
 
 > Jika anda ingin mnejadi fullstack web developer anda harus belajar "front-end", ada beberapa front-end JS dan kenapa React? Alasannya adalah **Opportunity dan Good Engineering**.
 
-![react-opportun](images/react-opportun.png)
+![react-opportun](/Users/dyo-medio/Desktop/01-KelasFullstack/Materi/images/react-opportun.png)
 
 > Kelebihan React lainnya adalah "Kombinasi Power, Elegance dan Simplicity" sebagai turunan dari JavaScript.
 
@@ -44,9 +50,12 @@ JavaScript membuat web aplikasi menjadi dinamis, merubah tampilan dan struktur t
 React berhubungan dengan semua diatas sebagai framework JavaScript, React mengoptimalkan JavaScript dengan menggunakan web browser dan membuat web app dinamis.
 
 
+
 ## Instalasi
 
 ### Instalasi Software
+
+
 
 **1. Code Editor**: Visual Studio Code (rekomendasi) https://code.visualstudio.com/.
 
@@ -60,15 +69,18 @@ Cara setup agar code editor bisa dibuka di browser:
 	Instal Extention: **ES7 React/Redux/GraphQL/React-Native snippets** (cukup search React).
 	
 
+
+
 **2. Commandline App**: 
-		
+
 	* Terminal (MacOS & Linux user). 
 	* GitBash (Windows user), cara instal GitBash: https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal
+
+
 
 **3. Node.js** download link: https://nodejs.org/en/download/
 
 Setelah node terinstal sempurna kemudian cek version dengan cara sbb:
-		
 	node -v
 	# harus `v8.8.1` or higher.
 	
@@ -85,6 +97,8 @@ Yang akan di pelajari pada aplikasi ini adalah konsep React:
 2. React Component.
 3. React State.
 4. React Props.
+
+
 
 
 ### create-react-app tool
@@ -138,7 +152,9 @@ kembali ke Terminal dan ketikan perintah sbb:
 
 dan jendela browser localhost:3000 dan aplikasi React akan terbuka.
 
-Buka folder public > index.html, akan terlihat struktur kode halaman React tsb.
+
+
+```>``` Buka folder public > index.html, akan terlihat struktur kode halaman React tsb.
 
 anda akan lihat tidak ada konten di dalam file index.html ini, karena konten di render dari halaman lain yang di tempatkan pada div root --> ```<div id="root"></div>```.
 
@@ -146,19 +162,25 @@ Konten di insert dari halaman **index.js**, dimana terdapat function **ReactDOM*
 
 	ReactDOM.render(<App />, document.getElementById('root'));
 
-- dari function diatas yang menjadi target element adalah **root** sebagai id selector.	
-- function diatas adalah **JSX** (JavaScript Extention) yang digunakan untuk menyisipkan element atau kode html.
-- dari function diatas di render <App /> dimana element App di import dari halaman App.js:
+Keterangan kode:
+
+- Dari function diatas yang menjadi target element adalah **root** sebagai id selector.	
+
+- Function diatas adalah **JSX** (JavaScript Extention) yang digunakan untuk menyisipkan element atau kode html.
+
+- Dari function diatas di render <App /> dimana element App di import dari halaman App.js:
 
 		import App from './App';
 		
 
 Selain App di import juga:
 
-	import React from 'react';
-	import ReactDOM from 'react-dom';
-	import './index.css';
-	import * as serviceWorker from './serviceWorker';		
+```react
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import * as serviceWorker from './serviceWorker';		
+```
 
 <br>	
 	
@@ -172,54 +194,55 @@ App.js berisi component react yang di tulis dengan format JSX, konten file App.j
 
 Masih di halaman App.js hapus semua konten didalam element ```<div className="App">``` dan ketikan "Hello React!", simpan dan akan update otomatis di browser.
 
-
 <br>
+
+
 
 ## ReactDOM, Element dan JSX
 
 Anda buka file struktur portfolio app dengan code editor, kita akan delete **src** folder, dengan tujuan agar kita bisa membuat ulang kode react dari awal sehingga memudahkan pemahaman anda dalam belajar React.
 
-Hapus folder **src** dan buat baru folder **src**.
+```>``` Hapus folder **src** dan buat baru folder **src**.
 
-Buat file baru **index.js**
+```>``` Buat file baru **index.js**.
 
-Import react library ke dalam file index.js:
+```>``` Import react library ke dalam file index.js:
 
 	import React from 'react';
 
-Import react DOM library:
+```>``` Import react DOM library:
 
 	import ReactDOM from 'react-dom';
 
-Render element html dengan ReactDOM:
+````>``` Render element html dengan ReactDOM:
 
 	ReactDOM.render(<div>Coba React</div>, document.getElementById('root'));
 
-Keterangan:
+Keterangan :
 
 Kita menggunakan ```ReactDOM.render()``` untuk merender JSX kedalam html dan menampilkannya:  ```<div>Coba React</div>``` pada argument pertama, pada argument kedua kita spesifikasi lokasi menempatkannya.
 Dengan mengakses document object javascript untuk menangkap element  html dengan **id = root**, dan menyisipkan file render di sana, cek di file index.html.
 
 Kode lengkap sbb:
 
-		import React from 'react';
-		import ReactDOM from 'react-dom';
-		
-		ReactDOM.render(<div>Coba React</div>, document.getElementById('root'));
-
-
-​		
-​		
+```react
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	
+	ReactDOM.render(<div>Coba React</div>, document.getElementById('root'))
+```
 
 Cek di browser update akan otomatis tampil "Coba React".
 
 <br>
 
+
+
 ## React Component
 
 Component adalah potongan-potongan kode / class yang dibentuk menjadi satu menjadi sebuah aplikasi React.
 
-Untuk membuat React component kita akan membuat file baru App.js :
+```>``` Untuk membuat React component kita akan membuat file baru App.js :
 
 
 	import React, { Component } from 'react';
@@ -229,21 +252,23 @@ Pada file App.js ini kita harus import React Library, selanjutnya kita harus imp
 
 Selanjutnya membuat **react component** yang ditulis sebagai javascript class, akan ditulis lengkap sbb:
 
-	import React, { Component } from 'react';
-	
-	class App extends Component {
-		render() {
-			return (
-				<div>
-					<h1>John Due</h1>
-					<p>I am Software Engineer.</p>
-					<p>Looking forward to work on your meaningful projects.</p>
-				</div>
-			)
-		} 
-	}
-	
-	export default App;
+```react
+import React, { Component } from 'react';
+
+class App extends Component {
+	render() {
+		return (
+			<div>
+				<h1>John Due</h1>
+				<p>I am Software Engineer.</p>
+				<p>Looking forward to work on your meaningful projects.</p>
+			</div>
+		)
+	} 
+}
+
+export default App;
+```
 
 Keterangan:
 
@@ -284,15 +309,19 @@ Simpan dan cek di browser:
 
 Bila kita klik kanan > inspect > body > div id = root:	
 	
-	<div id="root">
-		<div>
-			<h1>John Due</h1>
-			<p>I am Software Engineer</p>
-			<p>I am Looking forward to work in your meaningful projects.</p>
-		</div>
+```react
+<div id="root">
+	<div>
+		<h1>John Due</h1>
+		<p>I am Software Engineer</p>
+		<p>I am Looking forward to work in your meaningful projects.</p>
 	</div>
+</div>
+```
 
 <br>
+
+
 
 ## JavaScript Class
 
@@ -304,7 +333,7 @@ Interface adalah kumpulan dari properti dan method.
 
 Setiap object baru berbasis class tadi akan memiliki method-method and properti-properti yang sama.
 
-![](images/JSClass.png)
+![](/Users/dyo-medio/Desktop/01-KelasFullstack/Materi/images/JSClass.png)
 
 <br>
 
@@ -396,22 +425,24 @@ Kembali ke portfolio project.
 
 Buka file index.js, untuk memahami bagaimana class bekerja, buat sebuah class Animal sbb:
 
-	class Animal {
-		constructor(name,age) {
-			this.name = name;
-			this.age = age;
-		}
-		
-		class Speak {
-			console.log("I am animal1", this.name, "and I am", this.age, "years old." );
-		}
+```react
+class Animal {
+	constructor(name,age) {
+		this.name = name;
+		this.age = age;
 	}
 	
-	// crate instant
-	const animal1 = new Animal('Sarimin', 2);
-	
-	// call speak method
-	animal1.speak();
+	class Speak {
+		console.log("I am animal1", this.name, "and I am", this.age, "years old." );
+	}
+}
+
+// crate instant
+const animal1 = new Animal('Sarimin', 2);
+
+// call speak method
+animal1.speak();
+```
 
 Cobalah di terminal jalankan ```npm start```.
 	
@@ -443,31 +474,33 @@ lihat hasilnya pada tab Console.
 
 Kita akan membuat class baru extends dari class Animal:
 
-	class Lion extends Animal {
-		constructor(name, age, color, speed) {
-			// call property Animal
-			super(name,age);
-			this.color = color;
-			this.speed = speed;
-		}
-		
-		// create method
-		roar() {
-			console.log("Rooarr I have", this.color, "I can run", this.speed, km per hour)
-		}
+```react
+class Lion extends Animal {
+	constructor(name, age, color, speed) {
+		// call property Animal
+		super(name,age);
+		this.color = color;
+		this.speed = speed;
 	}
 	
-	// Create instance of Lion
-	const lion1 = new Lion('Toto', 10, 'golden', 20);
-	
-	// call as parent class
-	lion1.speak();
-	
-	// call as inheritance class
-	lion1.roar();
-	
-	// to see actual new instance
-	console.log(lion1);
+	// create method
+	roar() {
+		console.log("Rooarr I have", this.color, "I can run", this.speed, km per hour)
+	}
+}
+
+// Create instance of Lion
+const lion1 = new Lion('Toto', 10, 'golden', 20);
+
+// call as parent class
+lion1.speak();
+
+// call as inheritance class
+lion1.roar();
+
+// to see actual new instance
+console.log(lion1);
+```
 
 Simpan dan lihat hasilnya pada tab console.
 
@@ -482,16 +515,18 @@ Sebagai pembuktian hal diatas kita akan men-deklarasi dua buah class baru, yaitu
 
 Pada file App.js:
 
-	class ReqularClass {}
-	class ComponentClass extends Component {}
-	
-	// membuat instance class masing2
-	const reqularClassInstance = new RegularClass();
-	const componentClassInstance = new ComponentClass();
-	
-	// tampilkan 
-	console.log('reqularClassInstance', reqularClassInstance);
-	console.log('componentClassInstance', componentClassInstance);
+```react
+class ReqularClass {}
+class ComponentClass extends Component {}
+
+// membuat instance class masing2
+const reqularClassInstance = new RegularClass();
+const componentClassInstance = new ComponentClass();
+
+// tampilkan 
+console.log('reqularClassInstance', reqularClassInstance);
+console.log('componentClassInstance', componentClassInstance);
+```
 
 Cek hasilnya pada tab console.
 
@@ -509,11 +544,13 @@ Kita gunakan kembali file App.js dengan sebelumnya comment out/hapus latihan seb
 
 Tambahkan div pada paragraph terakhir:
 
-	<div>
-		<p>I live in Bekasi, and doing code everyday</p>
-		<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
-		<p>If I am not ngoding I will sleep or watch the TV.</p>
-	</div>
+```react
+<div>
+	<p>I live in Bekasi, and doing code everyday</p>
+	<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+	<p>If I am not ngoding I will sleep or watch the TV.</p>
+</div>
+```
 
 Simpan dan kemudian cek pada browser 3000.
 	
@@ -523,12 +560,14 @@ Kita akan update App component dengan menambahkan state.
 
 Pertama-tama kita tambahkan sebuah constructor pada **app component** terlebih dahulu:
 
-	class App extends Component {
-		constructor() {
-			this.state = {};
-		}
-	
-		...
+```react
+class App extends Component {
+	constructor() {
+		this.state = {};
+	}
+
+	...
+```
 
 sampai disini bila anda simpan dan cek pada browser maka akan ada error "*TypeError: Cannot set property 'state' of undefined*".
 

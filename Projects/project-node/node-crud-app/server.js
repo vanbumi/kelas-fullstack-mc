@@ -14,6 +14,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 
+// setup views & handlebars
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/views/layouts/' }));
 app.set('view engine', 'hbs');
@@ -23,4 +24,5 @@ app.listen(port, () => {
   console.log(`Express server started at port ${port}`);
 });
 
+// app.use('/', employeeController);
 app.use('/employee', employeeController);

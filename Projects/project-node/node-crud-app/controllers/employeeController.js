@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Employee = mongoose.model('Employee');
 
 // router.get('/', (req, res) => {
-//   res.json('test text');
+//   res.json('Halaman Index');
 // });
 
 router.get('/', (req, res) => {
@@ -21,7 +21,6 @@ router.post('/', (req, res) => {
 
   //console.log(req.body);
 });
-
 
 function insertRecord(req, res) {
   var employee = new Employee();
@@ -64,7 +63,7 @@ function updateRecord(req, res) {
   });
 }
 
-
+// halaman list
 router.get('/list', (req, res) => {
   Employee.find((err, docs) => {
     if (!err) {

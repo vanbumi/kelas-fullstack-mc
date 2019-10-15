@@ -9,6 +9,14 @@ var app = express();
 
 const employeeController = require('./controllers/employeeController');
 
+// halaman index
+app.get('/', (req, res) => {
+  // res.json('Halaman Index');
+  res.render("home/index", {
+    viewTitle: "home"
+  });
+});
+
 app.use(bodyparser.urlencoded({
   extended: true
 }));

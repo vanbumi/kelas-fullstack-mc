@@ -49,11 +49,13 @@ Example hasil deploy:
 
 <br><br>
 
-### Next deploy menggunakan node js
 
-```I``` Cara 1:
 
-​	https://appdividend.com/2018/04/14/how-to-deploy-nodejs-app-to-heroku/
+## Deploy Heroku with Node js
+
+### Cara 1:
+
+​	reff: https://appdividend.com/2018/04/14/how-to-deploy-nodejs-app-to-heroku/
 
 
 
@@ -146,7 +148,7 @@ heroku local web
 
 <br>
 
-```II``` Cara 2:
+###  Cara 2:
 
 Tambahkan file dan folder:
 

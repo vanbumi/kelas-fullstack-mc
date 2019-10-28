@@ -8,7 +8,9 @@
 
 Kali ini kita akan menggunakan template engine **Edge**: https://edge.adonisjs.com/ .
 
-Tapi kita akan menggunakan template engine **Edge ExpressJS**: https://github.com/ecrmnn/express-edge. 
+Karena kita menggunakan **Framework Express** agar lebih spesifik kita akan menggunakan template engine **Edge ExpressJS**, silahkan lihat di url : https://github.com/ecrmnn/express-edge.
+
+ 
 
 ```>``` Instal template edge:
 
@@ -31,17 +33,23 @@ app.set('views', `${__dirname}/views`);
 
 ```>``` Buat directory baru pada root "views".
 
-```>``` Buat file baru dibawah folder "views" beri nama index.edge.
+```>``` Buat file baru dibawah folder "views" beri nama **index.edge**.
 
-```>``` Buat file baru dibawah folder "views" beri nama post.edge.
+```>``` Buat file baru dibawah folder "views" beri nama **about.edge**.
 
-```>``` Buat file baru dibawah folder "views" beri nama contact.edge.
+```>``` Buat file baru dibawah folder "views" beri nama **post.edge**.
 
-```>``` Copy content file index.html dibawah folder pages dan paste kan ke file index.edge.
+```>``` Buat file baru dibawah folder "views" beri nama **contact.edge**.
 
-```>``` Lakukan juga dengan file about.html, post.html dan contact.html.
 
-```>``` Pada file index.js, update route nya:
+
+```>``` Copy content file ***index.html*** dibawah folder pages dan paste kan ke file ***index.edge***.
+
+```>``` Lakukan juga hal yang sama dengan file **about.html**, **post.html** dan **contact.html**.
+
+
+
+```>``` Pada file index.js, update route nya, tidak lagi menggunakan ```res.sendFile(path.resolve(__dirname, 'pages/... .html')```:
 
 ``` javascript
 app.get('/', (req, res) => {
@@ -62,6 +70,20 @@ app.get('/contact', (req, res) => {
 ```
 
 
+
+```>``` Coba hasilnya di browser:
+
+http://localhost:4000, 
+
+http://localhost:4000/about, 
+
+http://localhost:4000/post dan 
+
+http://localhost:4000/contact
+
+
+
+```>``` Source code: https://github.com/vanbumi/bloger-node/tree/04
 
 
 

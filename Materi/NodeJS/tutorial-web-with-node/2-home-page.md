@@ -13,15 +13,17 @@
 app.use(express.static('public'));
 ```
 
-```>``` Buat folder baru "ui" pada root "public".
+```>``` Buat folder baru "public" pada root project.
 
-```>``` Buat folder baru pada root "pages".
+```>``` Buat folder baru "ui" pada root project.
+
+```>``` Buat folder baru "pages" pada root project .
 
 ```>``` Buat file baru "index.html" dibawah direktori "pages".
 
-```>``` Membuat route halaman index.js:
+```>``` Membuat route di halaman index.js:
 
-```
+```javascript
 // tambahkan require "path"
 const path = require("path");
 
@@ -33,13 +35,13 @@ app.get('/', (req, res) => {
 
 ```>``` Copy content dari file index.htm pada folder "ui" dan paste kan pada file index.html pada folder pages.
 
-```>``` Copy folder "vendor" pada folder "ui" dan paste kan dibawah folder "public".
+```>``` Copy folder "**vendor**" pada folder "ui" dan paste kan dibawah folder "public".
 
-```>``` Copy folder "css" pada folder "ui" dan paste kan dibawah folder "public".
+```>``` Copy folder "**css**" pada folder "ui" dan paste kan dibawah folder "public".
 
-```>``` Copy folder "img" pada folder "ui" dan paste kan dibawah folder "public". 
+```>``` Copy folder "**img**" pada folder "ui" dan paste kan dibawah folder "public". 
 
-```>``` Copy folder "js" pada folder "ui" dan paste kan dibawah folder "public".
+```>``` Copy folder "**js**" pada folder "ui" dan paste kan dibawah folder "public".
 
 ```>``` Lihat hasil nya buka browser localhost:4000.
 

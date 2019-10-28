@@ -52,7 +52,7 @@ val = firstName.charAt(firstName.length -1); // result
 
 // substring(), mengambil karakter dari depan
 val = firstName.substring(0, 4);
-val = firstName.slice(-3); // mengambil karakter dari belakang
+val = firstName.slice(0, -3); // mengambil karakter dari belakang
 
 // split(), merubah string menjadi array
 val = str.split(' '); 

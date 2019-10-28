@@ -8,17 +8,21 @@
 
 Sekarang kita akan membuat layout dengan menggunakan template engine.
 
-```>``` Buat file baru "app.edge" dibawah folder views > layouts.
+```>``` Buat folder baru dibawah folder **views**, beri nama:  "**layouts**".
 
-```>``` Buka file pages > index.html, copy semua content nya dan paste kan di file app.edge.
+```>``` Buat file baru "**app.edge**" dibawah folder views > layouts.
 
-```>``` Pada file app.edge hapus bagian page-header dan main-content nya saja. 
+```>``` Buka file **pages > index.html**, copy semua content nya dan paste kan di file **app.edge**.
 
-```>``` Pada file app.edge antara header dan footer buat kode seperti ini:
+```>``` Pada file app.edge hapus bagian (section) ***page-header*** dan ***main-content***. 
+
+```>``` Masih pada file app.edge antara header dan footer buat kode seperti ini:
 
 ```javascript
 @!section('content')
 ```
+
+
 
 ```>``` Kembali ke file index.edge hapus semua content, dan update dengan kode sbb:
 
@@ -30,25 +34,52 @@ Sekarang kita akan membuat layout dengan menggunakan template engine.
 @endsection
 ```
 
-```>``` Copy content dari index.html dan Paste kan dibawah kode ```@section('content')```.
+```>``` Lakukan test dengan menuliskan ini dibawah @section('content'):
 
-```>``` Lakukan juga pada about.edge, post.edge dan contact.edge
+```javascript
+@section('content')
 
-```>``` Lihat hasilnya di browser localhost:4000, localhost:4000/about, localhost:4000/post, localhost:4000/contact.
+<h1>Index page</h1>
+```
+
+```>``` Lihat hasilnya pada browser. Navbar dan footer masih di render di halaman tsb, cek juga dengan klik kanan > inspection.
+
+
+
+```>``` Copy isi dari index.html dan Paste kan dibawah kode ```@section('content')``` pada file index.edge.
+
+```>``` Lakukan juga hal yang sama pada halaman ***about.edge***, ***post.edge*** dan ***contact.edge***.
+
+
+
+```>``` Lihat hasilnya di browser **localhost:4000**, **localhost:4000/about**, **localhost:4000/post**, **localhost:4000/contact**.
 
 ```>``` Rubah nama web nya menjadi nama web anda.
 
-``>`` Rubah title dari masing2 halaman, seperti nama halaman. 
+``>`` Rubah title dari masing2 halaman, seperti nama halaman, contoh:
+
+```javascript
+// Pada route index.js
+app.get('/', (req, res) => {
+  res.render('index', {
+    pageTitle: 'Project Blog'
+  });
+});
+
+// Pada heading index.edge
+<div class="site-heading">
+  <h1>{{ pageTitle }}</h1>
+	<span class="subheading">A Blog Theme by Start Bootstrap</span>
+</div>
+```
+
+```>``` Lakukan di semua halaman ya.
+
+```>``` Coba hasil nya di setiap halaman pada browser.
 
 
 
-
-
-
-
-
-
-
+```>``` Source code: https://github.com/vanbumi/bloger-node/tree/05
 
 
 

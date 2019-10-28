@@ -8,11 +8,11 @@
 
 ```>``` Buat folder project : { bloger-node }.
 
-```>``` Download template bootstrap: httpuis://startbootstrap.com/themes/clean-blog/
+```>``` Download template bootstrap: https://startbootstrap.com/themes/clean-blog/
 
-```>``` Buat folder baru di bawah folder project beri nama "ui".
+```>``` Buat folder baru di bawah folder root project beri nama "ui".
 
-```>``` Tempatkan template yang sudah di unzip dibawah folder ui, paste konten nya saja tanpa folder nya.
+```>``` Tempatkan template yang sudah di unzip dibawah folder ui, **paste konten nya saja tanpa folder nya**.
 
 ```>``` Buka Terminal dan arahkan ke folder project, dan instal node js dengan perintah:
 
@@ -23,7 +23,7 @@ npm init -y
 ```>``` Install express
 
 ```
-npm i express
+npm i express --save
 ```
 
 ```>``` Buat file baru pada root folder "index.js", kemudian update file nya sbb;
@@ -31,7 +31,6 @@ npm i express
 ```javascript
 const express = require('express');
 const app = express();
-
 
 // start server
 const port = process.env.PORT || 4000;

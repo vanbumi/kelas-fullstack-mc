@@ -63,9 +63,12 @@ const greeting; // akan error
 
 // Object
 const person = {
-  name = 'John',
-  age = 32
+  name : 'John',
+  age : 32
 }
+console.log(person.name)
+
+
 
 // tetap bisa reassign value of object
 person.name = 'Santos';

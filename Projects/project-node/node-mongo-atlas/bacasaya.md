@@ -1,5 +1,7 @@
 ## MongoDB Atlas dan NodeJS.
 
+> still full of bugs
+
 ref: https://codeforgeek.com/mongodb-atlas-node-js/
 
 MongoDB Atlas adalah database service platform untuk MongoDB.
@@ -10,7 +12,7 @@ MongoDB Atlas menjadi solusi isu diatas dan saat ini anda dapat menggunakan serv
 
 Tutorial ini akan menunjukan cara membuat akun MongoDB Atlas dan cara connect ke database dengan menggunakan code.
 
-### Get Start
+### Get Start with mongo Atlas
 
 ```>``` create the MongoDB Atlas account. https://www.mongodb.com/cloud/atlas.
 

@@ -8,7 +8,7 @@
 
 ```>``` Buat file baru "about.html" dibawah folder "pages". 
 
-```>``` Copy content dari file about.html pada folder "ui" dan paste kan pada file about.html dibawah folder pages.
+```>``` Copy content dari file **about.html** pada folder "ui" dan paste kan pada file **about.html** dibawah folder pages.
 
 ```>``` Pada halaman index.js buat route baru untuk halaman about.html :
 
@@ -18,9 +18,11 @@ app.get('/about', (req, res) => {
 });
 ```
 
-```>``` Lihat hasil nya pada browser localhost:4000/about
+```>``` Lihat hasil nya pada browser localhost:4000/about.
 
-```>``` Tambahkan juga route baru untuk halaman "post" dan "contact".
+
+
+```>``` Lakukan hal yang sama pada post.html dan contact.html, tambahkan juga route baru untuk halaman "post" dan "contact" tersebut:
 
 ``` javascript
 app.get('/post', (req, res) => {
@@ -32,6 +34,8 @@ app.get('/contact', (req, res) => {
 });
 ```
 
+
+
 ```>``` Buat file baru "post.html" dibawah folder "pages".
 
 ```>``` Buat file baru "contact.html" dibawah folder "pages" 
@@ -41,6 +45,20 @@ app.get('/contact', (req, res) => {
 ```>``` Copy content dari file contact.html pada folder "ui" dan paste kan pada file contact.html dibawah folder pages.
 
 
+
+```>``` Coba hasilnya di browser:
+
+http://localhost:4000, 
+
+http://localhost:4000/about, 
+
+http://localhost:4000/post dan 
+
+http://localhost:4000/contact
+
+
+
+```>``` Source code: https://github.com/vanbumi/bloger-node/tree/03
 
 
 

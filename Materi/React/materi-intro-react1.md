@@ -1,16 +1,17 @@
+
+
 ## React Fundamental - mediocademy.com
 
 # ReactJS.
+
+Github branch: master
 
 
 
 * Official Link React : https://reactjs.org/
 * Done version: <https://portfoliofundamental.herokuapp.com/>. 
-* Local path Materi: Desktop > 01-KelasFulstack > Materi > materi-intro-react.md.
-* Local path ProjectCase1: Desktop > 01-KelasFulstack > project-react > portfolio.
-* Local path ProjectCase2: Desktop > 01-KelasFulstack > project-react > ....
 
-
+  
 
 
 ## Apa yang anda dapat pada Pelatihan ini.
@@ -41,6 +42,7 @@
 
 
 
+<div style="page-break-after: always"></div>
 <br>
 
 ## Pengenalan React.
@@ -65,25 +67,21 @@ Cara setup agar code editor bisa dibuka di browser:
 * ctrl-shift-p (Windows).
 * Pilih dan Enter “Shell Command”, and choose “Install ‘code’ command in path.
 * Buka folder project dan ketik ```code .``` maka anda dapat membuka Visual Studio Code berikut folder project dan file2 nya.
-	
-	Instal Extention: **ES7 React/Redux/GraphQL/React-Native snippets** (cukup search React).
-	
+* Instal Extention: **ES7 React/Redux/GraphQL/React-Native snippets** (cukup search React).
 
 
 
 **2. Commandline App**: 
 
-	* Terminal (MacOS & Linux user). 
-	* GitBash (Windows user), cara instal GitBash: https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal
+* Terminal (MacOS & Linux user). 
+* GitBash (Windows user), cara instal GitBash, ref:
+  https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal
 
 
 
 **3. Node.js** download link: https://nodejs.org/en/download/
 
-Setelah node terinstal sempurna kemudian cek version dengan cara sbb:
-	node -v
-	# harus `v8.8.1` or higher.
-	
+Setelah node terinstal sempurna kemudian cek version dengan cara sbb:	
 	npm -v
 	# harus `v5.4.2` or higher.
 
@@ -186,7 +184,7 @@ import * as serviceWorker from './serviceWorker';
 	
 **Next!** buka folder src > App.js, dan tambahkan kode sbb diatas ```<img >``` :
 
-	<p>Hello Dyo!</p>
+	<h1>Hello React!</h1>
 
 kemudian simpan, maka browser akan update otomatis.
 
@@ -229,7 +227,7 @@ Kode lengkap sbb:
 	import React from 'react';
 	import ReactDOM from 'react-dom';
 	
-	ReactDOM.render(<div>Coba React</div>, document.getElementById('root'))
+	ReactDOM.render(<div>Coba React</div>, document.getElementById('root'));
 ```
 
 Cek di browser update akan otomatis tampil "Coba React".
@@ -242,7 +240,7 @@ Cek di browser update akan otomatis tampil "Coba React".
 
 Component adalah potongan-potongan kode / class yang dibentuk menjadi satu menjadi sebuah aplikasi React.
 
-```>``` Untuk membuat React component kita akan membuat file baru App.js :
+```>``` Untuk membuat React component buat file baru beri nama : App.js, harus diawali dengan huruf besar karena mewakili nama ***Class***, jd App adalah ***Class***.
 
 
 	import React, { Component } from 'react';
@@ -260,7 +258,7 @@ class App extends Component {
 		return (
 			<div>
 				<h1>John Due</h1>
-				<p>I am Software Engineer.</p>
+				<h3>I am Software Engineer.</h3>
 				<p>Looking forward to work on your meaningful projects.</p>
 			</div>
 		)
@@ -368,9 +366,9 @@ Property:
 Method:
 * Roar (auman)
 
-Tapi karena Lion adalah inheriting dari animal class maka juga akan mendapat akses properti dan method yang sama seperti yang sudah di declare oleh animal class.
+Tapi karena Lion adalah inheriting dari animal class maka juga akan mendapat akses properti dan method yang sama seperti yang sudah di declare oleh Animal Class.
 
-Jadi Lion juga memiliki nama dan age properti dan speak dan move method. 
+Jadi class **Lion** juga memiliki **nama** dan **age** properti dan **speak** dan **move** method. 
 
 Contoh lain Class Animal.
 new Class: Bear Class
@@ -383,9 +381,9 @@ Property:
 Method:
 * Growl (mengeram).
 
-Karena Bear adalah inheriting dari animal class maka juga memiliki property nama dan age serta method speak dan move. 
+Karena Bear adalah inheriting dari **Animal Class** maka juga memiliki property nama dan age serta method speak dan move. 
 
-Kumpulan dari property dan method disebut interface, artinya masing-masing Class adalah sebuah object, object itu sendiri berdasar class-class ini adalah ini adalah **instances** dari class.
+Kumpulan dari **property** dan **method** disebut **interface**, artinya masing-masing Class adalah sebuah **Object**, object itu sendiri berdasar class-class ini adalah ini adalah **instances** dari class.
 
 Setiap **instance** memiliki keunikan "nilai" sendiri dan bisa jadi akan men-generate banyak instance dari class yang sama.
 
@@ -395,25 +393,25 @@ Akan ada 4 macam object berbasis Lion, 3 macam generic Animal dan 4 macam jenis 
 
 Contoh instance Lion class:
 
-Sebuah Lion class memiliki property unik:
+Sebuah Lion class (A) memiliki property unik:
 
 * Color: Golden.
 * Speed: 10 km/hour.
 
-Instance Lion yang lain:
+Instance Lion yang lain (B):
 
 * Color: Red.
 * Speed: 7 km/hour.
 
-Keduanya adalah instance dari Lion Class, tapi memiliki ke unikan masing-masing.
+Keduanya (A dan B) adalah instance dari Lion Class, tapi memiliki ke unikan masing-masing.
 
 **Rangkuman**
 
-> Ilustrasi diatas adalah tentang cara kerja class dan inheritance didalam JavaScript.
+> * Ilustrasi diatas adalah tentang cara kerja class dan inheritance didalam JavaScript.
 
-> Component-component react dibuat dengan melalui inheritance dari **Component** class.
+> * Component-component react dibuat dengan melalui inheritance dari **Component** class.
 
-> Sangat penting untuk memahami konsep-konsep ini untuk memahami bagaimana component React bekerja.
+> * Sangat penting untuk memahami konsep-konsep ini untuk memahami bagaimana component React bekerja.
 
 Selanjutnya kita akan mempelajari konsep-konsep diatas dalam bentuk code untuk memahami lebih jauh dalam lagi.
 
@@ -423,50 +421,54 @@ Selanjutnya kita akan mempelajari konsep-konsep diatas dalam bentuk code untuk m
 
 Kembali ke portfolio project.
 
-Buka file index.js, untuk memahami bagaimana class bekerja, buat sebuah class Animal sbb:
+Buka file index.js, untuk memahami bagaimana class bekerja, buat sebuah GENERIC class **Animal** sbb:
 
 ```react
 class Animal {
-	constructor(name,age) {
-		this.name = name;
-		this.age = age;
-	}
-	
-	class Speak {
-		console.log("I am animal1", this.name, "and I am", this.age, "years old." );
-	}
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  speak() {
+    console.log("My name is", this.name, "and I am", this.age, "years old");
+  }
 }
 
-// crate instant
-const animal1 = new Animal('Sarimin', 2);
+// Create new instant
+const animal = new Animal('Leo', 2);
 
-// call speak method
-animal1.speak();
+// Call speak() method
+animal.speak();
 ```
 
 Cobalah di terminal jalankan ```npm start```.
 	
 Pada browser klik kanan > inspection > buka tab Console dan refresh browser untuk melihat hasil console.log:
 
-	I am animal1 Sarimin and I am 2 years old.
+	I am animal Leo and I am 2 years old.
 
-Kemudian kita akan melihat aktual instance dari Animal1 dengan console.log:
+Kemudian kita akan melihat aktual instance dari Animal dengan console.log:
 
-	console.log(animal1);
+	console.log(animal);
 
-lihat hasilnya pada tab Console.
+Lihat hasilnya pada tab Console, animal adalah generik class yang di produksi (instance), lawan dari **Generic class** adalah **Inheritance**.
+
+
 
 **Penjelasan kode**
 
-**Constructor method**, "```constructor()```", kita gunakan agar instance pada class ini dapat mengakses property class parent nya yaitu "name" dan "age".
+* **Constructor method**, "```constructor()```", Adalah spesial method pada JS, yang digunakan untuk membuat instance-instance baru dari **Class JS** dan agar instance2 pada class ini dapat mengakses property **class parent nya** yaitu "name" dan "age".
 
-**Method speak**, "```class Speak()```", kita gunakan untuk menentukan behaviour dari sebuah class, kemudian kita console.log untuk melihat hasil keluarannya pada console.
+* **Method speak**, "```class Speak()```", kita gunakan untuk menentukan behaviour (action) dari sebuah class, kemudian kita console.log untuk melihat hasil keluarannya pada console.
 
-**New instance monkey**, "```new Animal();```", kita gunakan untuk membuat instance baru dari Animal class.
+* **New instance "animal"**,  "```new Animal();```", kita gunakan untuk membuat instance dari Animal class, agar bisa kita invoke dengan value yang diberikan: ```const animal = new Animal('Leo', 2);```. 
 
-**Call speak method**, "```animal1.speak();```", kita gunakan untuk memanggil method speak agar bisa di eksekusi.
+* **Call speak method**, "```animal.speak();```", kita gunakan untuk memanggil method speak agar bisa di eksekusi.
 
-**Melihat aktual instance yang baru dibuat**, "```console.log(animal1);```", kita gunakan untuk melihat actual Animal class instance yang dibuat.
+* **Melihat aktual instance yang baru dibuat**, "```console.log(animal);```", kita gunakan untuk melihat actual Animal class instance yang dibuat.
+
+
 
 <br>
 
@@ -477,41 +479,42 @@ Kita akan membuat class baru extends dari class Animal:
 ```react
 class Lion extends Animal {
 	constructor(name, age, color, speed) {
-		// call property Animal
-		super(name,age);
+		// invoke constructor parent class (Animal)
+		super(name, age);
+    // then invoke own property
 		this.color = color;
 		this.speed = speed;
 	}
 	
 	// create method
 	roar() {
-		console.log("Rooarr I have", this.color, "I can run", this.speed, km per hour)
+		console.log("Rooarr I have", this.color, "I can run", this.speed, "km per hour")
 	}
 }
 
 // Create instance of Lion
-const lion1 = new Lion('Toto', 10, 'golden', 20);
+const lion = new Lion('Lionel', 10, 'golden', 20);
 
 // call as parent class
-lion1.speak();
+lion.speak();
 
 // call as inheritance class
-lion1.roar();
+lion.roar();
 
 // to see actual new instance
-console.log(lion1);
+console.log(lion);
 ```
 
 Simpan dan lihat hasilnya pada tab console.
 
 <br>
 
-Contoh diatas menjelaskan bagaimana class dan inheritance sistem bekerja pada JavaScript dan menambah pemahaman kita tentang React Component Inheritance Model.
+Contoh diatas menjelaskan bagaimana class dan inheritance sistem bekerja pada JavaScript dan menambah pemahaman kita tentang **React Component Inheritance Model**.
 	
-Bila anda perhatikan pada file App.js bahwa app Component adalah extends dari Component Class, kerana itu menjadikan app component inherit property-property dan method-method yang sudah di define pada Component Class dari React.
+Bila anda perhatikan pada file App.js bahwa **App** adalah extends dari **Component** Class, kerena itu disebut **App** adalah  inherit dari **Component** class, sehingga **App** dapat memangil  property dan method yang ada pada **Component** Class (**parent** nya).
 
 
-Sebagai pembuktian hal diatas kita akan men-deklarasi dua buah class baru, yaitu satu adalah regular class javascript yang tidak extend ke class component, dan satu lagi class yang extends ke class component: 
+Sebagai pembuktian hal diatas kita akan men-deklarasi dua buah class baru, yaitu satu adalah **regular class** javascript yang tidak extend ke class **component**, dan satu lagi class yang extends ke class **component**: 
 
 Pada file App.js:
 
@@ -530,31 +533,40 @@ console.log('componentClassInstance', componentClassInstance);
 
 Cek hasilnya pada tab console.
 
+![](/Users/dyo-medio/Desktop/01-KelasFullstack/Materi/images/consolelog.png)
+
+**Kesimpulan**
+
+* Class dari hasil extends dari Component class dapat mengakses method dan property dari parents nya.
+
+
+
 <br>
 
 ## State
 
-State adalah updatable struktur yang memuat data untuk sebuah component. 
+State adalah **updatable struktur** yang memuat data untuk sebuah component. 
 
-Contoh penggunaan state, untuk mengetahui berapa kali user klik, dengan menggunakan clickedCount() method yang akan menghitung user klik.
+Contoh penggunaan state, untuk mengetahui berapa kali user klik, dengan menggunakan **clickedCount()** method yang akan menghitung user klik.
 
 Kita akan membuat contoh penggunaan state untuk tombol toggle dimana bila di klik akan muncul detail bio dari aplikasi portfolio yang kita buat.
 
-Kita gunakan kembali file App.js dengan sebelumnya comment out/hapus latihan sebelumnya pada file App.js dan index.js:
+Kita gunakan kembali file App.js dan index.js, latihan sebelumnya silahkan anda *comment out*.
 
 Tambahkan div pada paragraph terakhir:
 
 ```react
 <div>
-	<p>I live in Bekasi, and doing code everyday</p>
-	<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
-	<p>If I am not ngoding I will sleep or watch the TV.</p>
+  <p>Address: Jalan Sukarno Hatta Bandung</p>
+  <p>Hobby: Reading and Swimming</p>
+  <p>I am good coder, hardworker also good team player</p>
+  <p>Please Hire me....! contact me: 0877xxxxxx</p>
 </div>
 ```
 
 Simpan dan kemudian cek pada browser 3000.
 	
-Tambahan informasi bio ini akan kita buat toggleable di klik muncul dan sebaliknya, dimana defaultnya adalah "hidden", untuk fungsionalitas ini kita akan menggunaka **State**.
+Tambahan informasi bio diatas akan kita buat ***toggle able*** di klik muncul dan sebaliknya, dimana defaultnya adalah "hidden", untuk fungsionalitas ini kita akan menggunaka **State**.
 
 Kita akan update App component dengan menambahkan state.
 
@@ -569,17 +581,19 @@ class App extends Component {
 	...
 ```
 
-sampai disini bila anda simpan dan cek pada browser maka akan ada error "*TypeError: Cannot set property 'state' of undefined*".
+sampai disini bila anda simpan dan cek pada browser maka akan ada error "*TypeError: Cannot set property 'state' of undefined*", atau error ini *'this' is not allowed before 'super()'*
 
-Solusi nya kita harus menambahkan **super property** pada constructor untuk memanggil parent class constructor method dari component induknya, atau invoke constructor of the parent component class:
+Solusi nya kita harus menambahkan **super property** pada constructor untuk memanggil property dan method dari parent class, atau dari component induknya, atau *invoke constructor of the parent component class*:
 
-	class App extends Component {
-		constructor() {
-			super();
-			this.state = {};
-		}
-	
-		...
+```react
+class App extends Component {
+	constructor() {
+		super();
+		this.state = {};
+	}
+
+	...
+```
 
 maka error akan hilang.
 
@@ -595,25 +609,151 @@ Update kode diatas sbb:
 
 kemudian pada render method kita update kode nya sbb:
 
-	ender() {
-	return (
-	  <div>
-	    <img src={profile} alt="profile" className="profile" />
-	    <h1>John Doe</h1>
-	    <p>I am Software Engineer</p>
-	    <p>I am Looking forward to work in your meaningful projects.</p>
-	    {
-	      this.state.displayBio ? (
-	        <div>
-	          <p>I live in Bekasi, and doing code everyday</p>
-	          <p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
-	          <p>If I am not ngoding I will sleep or watch the TV.</p>
-	          <button onClick={this.toggleDisplayBio}>Show less</button>
-	        </div>
-	      ) : null
-				...
+#### Cara 1
 
-**Keterangan**
+```>``` Tambahan bio kita simpan dalam variable bio.
+
+```>``` Cara menampilkannya di return adalah dengan memanggil menggunakan **curlybrace** :
+
+```react
+{ bio }
+```
+
+```>``` Kode lengakap nya seperti dibawah:
+
+```react
+render() {
+  let bio = ( 
+  	 <div>
+        <p>Address: Jalan Sukarno Hatta Bandung</p>
+        <p>Hobby: Reading and Swimming</p>
+        <p>I am good coder, hardworker also good team player</p>
+        <p>Please Hire me....! contact me: 0877xxxxxx</p>
+     </div>    
+  );
+  
+    return (
+      <div>
+        <img src="{profile}" alt="profile" />
+        <h1>John Deep</h1>
+        <h3>Software Engineer</h3>
+        <p>I am coder of JavaScript, Node and React</p>
+        <p>Look forward to work with you!</p>
+				{ bio }
+       
+      </div>
+    )
+  }
+```
+
+```>``` Bila kita lihat this.state di atas nilai nya ada false, secara defaul jadi kita buat if condition diatas **return** sbb:
+
+```react
+if (!this.state.displayBio) {
+  bio = null;
+} 
+```
+
+```>``` Lakukan dengan mengganti this.state menjadi true, maka bio akan muncul.
+
+
+
+#### Cara 2
+
+```>``` If statement ini bisa kita ganti menjadi **Terniary Expression** (menggunakan 1 baris if condition):
+
+```react
+this.state.displayBio ? (true condition) : (false condition)
+```
+
+```>``` Code lengkapnya seperti dibawah:
+
+```react
+let bio = this.state.displayBio ? (
+	<div>
+    <p>Address: Jalan Sukarno Hatta Bandung</p>
+    <p>Hobby: Reading and Swimming</p>
+    <p>I am good coder, hardworker also good team player</p>
+    <p>Please Hire me....! contact me: 0877xxxxxx</p>
+  </div>
+) : null
+```
+
+```>``` Kode lengkapnya seperti ini:
+
+
+```react
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { displayBio: false };
+  }
+
+  render() {
+    let bio = this.state.displayBio ? (
+      <div>
+        <p>Address: Jalan Sukarno Hatta Bandung</p>
+        <p>Hobby: Reading and Swimming</p>
+        <p>I am good coder, hardworker also good team player</p>
+        <p>Please Hire me....! contact me: 0877xxxxxx</p>
+      </div>
+    ) : null;
+
+    return (
+      <div>
+        <img src="{profile}" alt="profile" />
+        <h1>John Deep</h1>
+        <h3>Software Engineer</h3>
+        <p>I am coder of JavaScript, Node and React</p>
+        <p>Look forward to work with you!</p>
+        {bio}
+      </div>
+    )
+  }
+```
+
+
+
+#### Cara 3
+
+Dengan memindahkan Terniary Expression di bawah return, contoh dan kode lengkap nya seperti ini:
+
+```react
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { displayBio: false };
+  }
+
+  render() {
+   
+    return (
+      <div>
+        <img src="{profile}" alt="profile" />
+        <h1>John Deep</h1>
+        <h3>Software Engineer</h3>
+        <p>I am coder of JavaScript, Node and React</p>
+        <p>Look forward to work with you!</p>
+        {
+          this.state.displayBio ? (
+          <div>
+            <p>Address: Jalan Sukarno Hatta Bandung</p>
+            <p>Hobby: Reading and Swimming</p>
+            <p>I am good coder, hardworker also good team player</p>
+            <p>Please Hire me....! contact me: 0877xxxxxx</p>
+          </div>
+          ) : null;
+        }
+      </div>
+    )
+  }
+```
+
+
+
+Keterangan**
 
 Kita menggunakan one line if statement:
 
@@ -625,6 +765,8 @@ Statement sesudah ":" jika kondisini nya tidak benar maka ini yang di eksekusi.
 Selanjutnya kita akan memberikan **user** untuk memiliki control untuk switch displayBio show atau hidden dalam state dengan menggunakan **setState**.
 
 <br>
+
+
 
 ## setState.
 
@@ -673,37 +815,65 @@ Simpan, cek pada browser 3000, klik button **read more**, akan muncul error:
 
 <span style="color: red; font-weight: bold">TypeError: Cannot read property 'setState' of undefined. <br><br> > 10 | this.setState({ display: true })</span>
 	
-Error ini disebabkan **setState** undefined dan tidak bisa berjalan pada JavaSript karena bukan global method dari JavaScript.
+Error ini disebabkan **setState** undefined dan tidak bisa berjalan pada JavaSript karena **setState** bukan global method  JavaScript.
 
 Kita akan melakukan test dengan melakukan console.log terhadap **this** object pada helper method **readMore** sbb:
 
 	readMore() {
-		console.log('readMore this', this);
+		console.log('this in readMore', this);
 		//this.setState({ displayBio: true });
 	}
 
-dan juga kita akan test **this** object pada **constructor** sebagai perbandingan:
+dan juga kita akan test **this** object pada **constructor** sebagai perbandingan, antara this di luar method constructor dan di dalam method constructor.
 
 	constructor() {
 		...
 		...
 		
-		console.log('Component this', this);
+		console.log('this in constructor', this);
 	}
 
 Simpan dan lihat pada console tab:
 
-Pada **Component this** adalah **app** dan memiliki akses ke **setState** function, sedangkan bila kita klik Read more button **readMore this undefined**, karena tidak memiliki akses ke **class app component**.
+![](/Users/dyo-medio/Desktop/01-KelasFullstack/Materi/images/this-method.png)
 
-## .bind() method.
+Pada **this in constructor** adalah **App class** dan memiliki akses ke semua method & property di App class seperti **Contetxt, State, Props** dsb, sedangkan bila kita klik Read more button **this in constructor** hasilnya **undefined**, karena tidak memiliki akses ke **class app component**.
+
+### .bind() method.
 
 Solusi nya JavaScript memiliki special **.bind** method, yang akan pass **this** object, dari satu object ke yang lainnya. Dengan cara this.helperMethod di bind(this) atau dengan bahasa kode nya sbb:
 
 	this.readMore.bind(this);
 
-jd dengan script diatas this dari component class akan dibawa (pass) ke dalam helper method yang kita buat. Lanjut kita set sbb:
+jadi dengan script diatas this dari component class akan dibawa (pass) ke dalam helper method yang kita buat. 
 
-	this.readMore = this.readMore.bind(this);
+Dengan kata lain ***helper method readMore*** di register dulu di dalam constructor, dengan menggunakan method **bind()** i:
+
+```react
+constructor() {
+    super();
+    this.state = { displayBio: false };
+
+    this.readMore = this.readMore.bind(this);
+  }
+```
+
+kode lengkapnya seperti ini :
+
+```react
+constructor() {
+    super();
+    this.state = { displayBio: false };
+    console.log('this on constructor', this)
+
+    this.readMore = this.readMore.bind(this);
+  }
+
+  readMore() {
+    console.log('this on readmonre', this);
+    this.setState({ displayBio: true });
+  }
+```
 
 Dengan demikian this pada setState tidak lagi undefined:
 
@@ -719,17 +889,37 @@ Kita juga akan menambahkan button untuk mengembalikan ke kondisi collapse **hidd
 
 Pada akhir paragraph tambahkan button **Show less**.
 
-	<button>Show less</button>
+```react
+<div>
+  <p>Address: Jalan Sukarno Hatta Bandung</p>
+  <p>Hobby: Reading and Swimming</p>
+  <p>I am good coder, hardworker also good team player</p>
+  <p>Please Hire me....! contact me: 0877xxxxxx</p>
+  <button>Show less</button>
+</div>
+```
+
+```>``` Buat helper method nya:
+
+```react
+showLess() {
+	this.setState({ ... })
+}
+```
 
 
-​	
-Kita akan membuat helper method baru **toggleDisplayBio()**
+
+```>``` Daripada membuat 2 helper seperti diatas lebih baik membuat 1 buah helper method **toggle** 
+
+```>```Kita akan membuat helper method baru **toggleDisplayBio()**
 
 	toggleDisplayBio() {
 		this.setState({ displayBio: !this.state.displayBio })
 	}
 
-> ***)** **!** Operator kita gunakan untuk menyatakan kondisi sebaliknya, true to false or false to true.
+***)** Tanda **!** adalah **Bang Operator** kita gunakan untuk menyatakan kondisi sebaliknya, bila true menjadi false atau bila false menjadi true.
+
+
 
 readMore method bisa kita hapus, jangan lupa untuk bind toggleDisplayBio() method:
 
@@ -741,8 +931,52 @@ Kemudian tambahkan onClick pada button **Show less** dan **Show more** :
 	
 	<button onClick={this.toggleDisplayBio}>Show more</button>
 
+```>``` Kode lengkap nya sbb:
 
-​	
+```react
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { displayBio: false };
+
+    this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+  }
+
+  toggleDisplayBio() {
+    this.setState({ displayBio: !this.state.displayBio })
+  }
+
+  render() {
+    return (
+      <div>
+        <img src="{profile}" alt="profile" />
+        <h1>John Deep</h1>
+        <h3>Software Engineer</h3>
+        <p>I am coder of JavaScript, Node and React</p>
+        <p>Look forward to work with you!</p>
+        {
+          this.state.displayBio ? (
+            <div>
+              <p>Address: Jalan Sukarno Hatta Bandung</p>
+              <p>Hobby: Reading and Swimming</p>
+              <p>I am good coder, hardworker also good team player</p>
+              <p>Please Hire me....! contact me: 0877xxxxxx</p>
+              <button onClick={this.toggleDisplayBio}>Show less</button>
+            </div>
+          ) : (
+              <div>
+                <button onClick={this.toggleDisplayBio}>Read more</button>
+              </div>
+            )
+        }
+      </div>
+    )
+  }
+}
+```
+
+
 Simpan dan cek klik Show more dan Show less.
 
 <br>
@@ -755,51 +989,53 @@ Saat nya untuk explore *cleaner way*, dengan menggunakan **class property dan in
 
 Jadi refactor kode diatas pada file App.js, kode lengkapnya sbb:
 
-	import React, { Component } from 'react';
-	import Projects from './Projects';
-	import SocialProfile from './SocialProfiles';
-	import profile from './assets/profile.png';
-	
-	class App extends Component {
-	
-		state = { displayBio: false }
-	
-		// helper method dirubah menjadi function arrow.
-		toggleDisplayBio = () => {
-			this.setState({ displayBio: !this.state.displayBio });
-		}
-	
-		render() {
-			return (
-				<div>
-					<img src={profile} alt="profile" className="profile" />
-					<h1>John Doe</h1>
-					<p>I am Software Engineer</p>
-					<p>I am Looking forward to work in your meaningful projects.</p>
-					{
-						this.state.displayBio ? (
-							<div>
-								<p>I live in Bekasi, and doing code everyday</p>
-								<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
-								<p>If I am not ngoding I will sleep or watch the TV.</p>
-								<button onClick={this.toggleDisplayBio}>Show less</button>
-							</div>
-						) : (
-								<div>
-									<button onClick={this.toggleDisplayBio}>Read more</button>
-								</div>
-							)
-					}
-					<hr />
-					<Projects />
-					<hr />
-					<SocialProfile />
-				</div>
-			)
-		}
+```react
+import React, { Component } from 'react';
+import Projects from './Projects';
+import SocialProfile from './SocialProfiles';
+import profile from './assets/profile.png';
+
+class App extends Component {
+
+	state = { displayBio: false }
+
+	// helper method dirubah menjadi function arrow.
+	toggleDisplayBio = () => {
+		this.setState({ displayBio: !this.state.displayBio });
 	}
-	
-	export default App;
+
+	render() {
+		return (
+			<div>
+				<img src={profile} alt="profile" className="profile" />
+				<h1>John Doe</h1>
+				<p>I am Software Engineer</p>
+				<p>I am Looking forward to work in your meaningful projects.</p>
+				{
+					this.state.displayBio ? (
+						<div>
+							<p>I live in Bekasi, and doing code everyday</p>
+							<p>Ngoding is my hobby, I love JavaScript language, and my favorite is React, React is awasome</p>
+							<p>If I am not ngoding I will sleep or watch the TV.</p>
+							<button onClick={this.toggleDisplayBio}>Show less</button>
+						</div>
+					) : (
+							<div>
+								<button onClick={this.toggleDisplayBio}>Read more</button>
+							</div>
+						)
+				}
+				<hr />
+				<Projects />
+				<hr />
+				<SocialProfile />
+			</div>
+		)
+	}
+}
+
+export default App;
+```
 
 Pastikan aplikasi masih berjalan di browser 3000.
 
@@ -816,9 +1052,15 @@ Project component terdiri dari:
 * Description.
 * Social media link.
 
-Untuk image silahkan anda gunakan 3 image anda pribadi sebagai portfolio bisa apa saja bebas, berinama image tsb dengan **project1**, **project2**, **project3**. Buatlah folder **assets** dibawah folder **src**, tempatkan 3 image tsb di folder assets.
+Untuk image silahkan anda gunakan 3 image anda pribadi sebagai portfolio bisa apa saja bebas, berinama image tsb dengan **project1**, **project2**, **project3**. 
 
-Buat folder baru **data** dibawah folder **src**, pada folder **data** kita tempatkan **js file** yang akan gunakan untuk menyimpan data project seperti image, title dan description. Jadi buatlah file baru dibawah data simpan dengan nama **projects.js**
+/> Buatlah folder **assets** dibawah folder **src**, tempatkan 3 image tsb di folder assets.
+
+/> Buat folder baru **data** dibawah folder **src**, 
+
+/> Pada folder **data** kita tempatkan **js file** yang akan gunakan untuk menyimpan data project seperti image, title dan description. 
+
+/> Buatlah file baru dibawah data simpan dengan nama **projects.js**
 
 Update file project.js sbb:
 
@@ -869,43 +1111,79 @@ Selanjutnya membuat data project dengan array, isi data array sesuai dengan proj
 
 	export default PROJECTS;
 
+```>``` Kode lengkapnya sbb;
+
+```json
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project3 from '../assets/project3.png';
+
+const PROJECTS = [
+	{
+		id: 1,
+		title: 'Example React Application',
+		description: 'A React App that I built, involving JS and core web dev concepts!',
+		link: 'https://github.com/vanbumi/example',
+		image: project1
+	},
+	{
+		id: 2,
+		title: 'My API',
+		description: 'A REST API that I built from scratch with GET and POST requests!',
+		link: 'https://github.com/vanbumi/example',
+		image: project2
+	},
+	{
+		id: 3,
+		title: 'Operating Systems Final Project',
+		description: 'My unique final project for my university Operating Systems course.',
+		link: 'https://github.com/vanbumi/example',
+		image: project3
+	}
+];
+
+export default PROJECTS;
+```
+
 **Keterangan**
 
 Agar bisa available / di share pada file/ component lain.
 
 <br>
 
-Sekarang buat file **Projects.js** dibawah folder **src**, pastikan **P** dengan HURUF BESAR.
+```>``` Sekarang buat file **Projects.js** dibawah folder **src**, pastikan **P** dengan HURUF BESAR.
 
-Update Project.js sbb:
+```>``` Update Project.js sbb:
 
-	import React, { Component } from 'react';
-	import PROJECTS from './data/projects';
-	
-	class Project extends Component {
-		render() {
-			return (
+```react
+import React, { Component } from 'react';
+import PROJECTS from './data/projects';
+
+class Project extends Component {
+	render() {
+		return (
+			<div>
+				<h2>Highlighted Projects</h2>
 				<div>
-					<h2>Highlighted Projects</h2>
-					<div>
-						{
-							PROJECTS.map((PROJECT => {
-								return (
-									<div>{PROJECT.title}</div>
-								)
-							});
-						}
-					</div>
+					{
+						PROJECTS.map(PROJECT => {
+							return (
+								<div>{PROJECT.title}</div>
+							)
+						})
+					}
 				</div>
-			)
-		}
+			</div>
+		)
 	}
-	
-	export default Projects;
+}
 
-Import Projects.js ini pada file App.js:
+export default Projects;
+```
 
-Pada file App.js:
+```>``` Import Projects.js ini pada file App.js:
+
+```>``` Di file App.js:
 
 	import Projects from './Projects';
 
@@ -928,9 +1206,9 @@ Simpan dan cek lagi warning akan hilang.
 
 ## Props dan Project Component
 
-Kode pada Project.js diatas kita akan membuat component baru yang akan kita sebut **project component** yang akan kita gunakan untuk men-display list data project, disini kita akan menggunakan **component prop**, **prop** adalah cara parent component untuk melewatkan/menurunkan data kepada child component dibawahnya.
+Kode pada Project.js diatas kita akan membuat component baru yang akan kita sebut **project component** yang akan kita gunakan untuk men-display list data project, disini kita akan menggunakan **component prop**, **prop** adalah cara **parent component** untuk melewatkan/menurunkan data kepada child component dibawahnya.
 
-Kita akan membuat component class baru diatas component parent nya:
+Kita akan membuat component class baru "Project" atau beri nama terserah yang anda mau, letaknya diatas component parent nya:
 
 	class Project extends Component {
 		render() {
@@ -942,13 +1220,13 @@ Kita akan membuat component class baru diatas component parent nya:
 
 **Keterangan**
 
-* Kode diatas adalah child component baru yang kita buat, child component ini akan kita gunakan untuk me-list data project yang ada, dengan menggunakan **prop** ```{this.props.project.title}``` sehingga data dari hasil **.map** di parent component bisa dilewatkan kesini.
+* Kode diatas adalah child component baru yang kita buat, child component ini akan kita gunakan untuk me-list data project yang ada, dengan menggunakan **prop** ```{this.props}``` atau lengkapnya ```{this.props.project.title}``` sehingga data dari hasil **.map** di parent component bisa dilewatkan kesini.
 
-* **this**: Component children masih dapat mengakses **this**	dan juga **props** untuk melewatkan data dari parent ke children, contoh ```this.props``` beda nya dengan ```this.state```, **state** berlaku internal component, tidak antar component.
+* **this**: Component children masih dapat mengakses **this** dan juga **props** untuk melewatkan data dari parent ke children, contoh ```this.props``` beda nya dengan ```this.state```, **state** berlaku internal component, tidak antar component.
 
 * **props**: Digunakan component parent untuk melewatkan datanya ke component children.
 
-* **project**: Adalah nama atribut dari component parents hasil dari method **.map** (loop).
+* **project**: Adalah nama **atribut** dari component parents hasil dari method **.map** (loop), anda bisa menggunakan nama lain "rempeyek" misalnya, jika ingin nama nya berbeda.
 
 * **title**: Adalah nama key dari object title, seperti description, image dsb.
 
@@ -984,25 +1262,81 @@ jadi kita membuatnya lebih singkat dan clean.
 
 Kemudian kita tampilkan dibawah return dari child component sbb:
 
-	return (
-	  <div>
-	    <h3>{title}</h3>
-	    <img src={image} alt="profile" />
-	    <p>{description}</p>
-	    <a href={link}>{link}</a>
-	  </div>
-	)
+```react
+return (
+  <div>
+    <h3>{title}</h3>
+    <img src={image} alt="profile" />
+    <p>{description}</p>
+    <a href={link}>{link}</a>
+  </div>
+)
+```
 
-Cek pada browser 3000, kemudian kita beri style sbb:
+```>``` Kode lengkap nya sbb:
 
-	return (
-		<div style={{ display: 'inline-block', width: 300, margin: 10 }}>
-			<h3>{title}</h3>
-			<img src={image} alt="profile" style={{ width: 200, height: 120 }} />
-			<p>{description}</p>
-			<a href={link}>{link}</a>
-		</div>
-	)
+```react
+import React, { Component } from 'react';
+import PROJECTS from './data/projects';
+
+class Proyek extends Component {
+  render() {
+    const { title, image, description, link } = this.props.rempeyek;
+
+    return (
+      <div>
+        <h3>{title}</h3>
+        <img src={image} alt="profile" />
+        <p>{description}</p>
+        <a href="{link}">{link}</a>
+      </div>
+    )
+  }
+}
+
+class Projects extends Component {
+  render() {
+    return (
+      <div>
+        <h2>Highlighted Projects</h2>
+        <div>
+          {
+            PROJECTS.map(PROJECT => {
+              return (
+                <Proyek key={PROJECT.id} rempeyek={PROJECT} />
+              )
+            })
+          }
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Projects;
+```
+
+```*```keterangan kode:
+
+* Saya rubah nama atribut nya menjadi **rempeyek** supaya tidak bingung semua pakai project.
+* Saya rubah nama Class nya menjadi **Proyek** supaya tidak bingung semua pakai nama Project.
+
+
+
+Cek pada browser 3000 
+
+```>``` Kemudian kita beri style sbb:
+
+```react
+return (
+	<div style={{ display: 'inline-block', width: 300, margin: 10 }}>
+		<h3>{title}</h3>
+		<img src={image} alt="profile" style={{ width: 200, height: 120 }} />
+		<p>{description}</p>
+		<a href={link}>{link}</a>
+	</div>
+)
+```
 
 Kemudian cek lagi pada browser 3000.
 
@@ -1011,92 +1345,154 @@ Kemudian cek lagi pada browser 3000.
 ## Social Media Icon
 
 
-Buatlah file baru socialProfile.js dibawah folder data, kemudian update file sbb:
+Buatlah file baru socialProfiles.js dibawah folder data, kemudian update file sbb:
 
-	import emailIcon from '../assets/email_icon.png';
-	import githubIcon from '../assets/github_icon.png';
-	import linkedinIcon from '../assets/linkedin_icon.png';
-	import twitterIcon from '../assets/twitter_icon.png';
-	
-	const SOCIAL_PROFILES = [
-		{
-			id: 1,
-			link: 'mailto:dkcodehelper@gmail.com',
-			image: emailIcon
-		},
-		{
-			id: 2,
-			link: 'https://github.com/15Dkatz',
-			image: githubIcon
-		},
-		{
-			id: 3,
-			link: 'https://www.linkedin.com/in/david-katz-sf',
-			image: linkedinIcon
-		},
-		{
-			id: 4,
-			link: 'https://twitter.com/dkcodehelper',
-			image: twitterIcon
-		}
-	];
-	
-	export default SOCIAL_PROFILES;
+```json
+import emailIcon from '../assets/email_icon.png';
+import githubIcon from '../assets/github_icon.png';
+import linkedinIcon from '../assets/linkedin_icon.png';
+import twitterIcon from '../assets/twitter_icon.png';
+
+const SOCIAL_PROFILES = [
+	{
+		id: 1,
+		link: 'mailto:jsp.dio@gmail.com',
+		image: emailIcon
+	},
+	{
+		id: 2,
+		link: 'https://github.com/vanbumi',
+		image: githubIcon
+	},
+	{
+		id: 3,
+		link: 'https://www.linkedin.com/in/widyobumi',
+		image: linkedinIcon
+	},
+	{
+		id: 4,
+		link: 'https://twitter.com/mediosoft
+		image: twitterIcon
+	}
+];
+
+export default SOCIAL_PROFILES;
+```
 
 Silahkan gunakan image icon untuk email, github, linkedin, twitter yang sudah saya sediakan, gunakan link sosmed anda masing-masing.
+
+* Twitter: https://github.com/vanbumi/portfolioapp-reactfundamental/blob/master/src/assets/twitter_icon.png
+
+* email: https://github.com/vanbumi/portfolioapp-reactfundamental/blob/master/src/assets/email_icon.png
+
+* https://github.com/vanbumi/portfolioapp-reactfundamental/blob/master/src/assets/github_icon.png
+
+* https://github.com/vanbumi/portfolioapp-reactfundamental/blob/master/src/assets/linkedin_icon.png
+
+  
+
+
 
 
 ## Social Profile Component.
 
-Sekarang kita akan membuat Component baru yaitu SocialProfile, dengan membuat file baru **SocialProfile.jd** dibawah folder src. Gunakan huruf **S** besar dengan menggunakan Convention (aturan baku) untuk **React Component**, sama seperti nama **Class**.  
+Sekarang kita akan membuat Component baru yaitu SocialProfile, dengan membuat file baru **SocialProfile.js** dibawah folder src. Gunakan huruf **S** besar dengan menggunakan Convention (aturan baku) untuk **React Component**, sama seperti nama **Class**.  
 
 Update kode nya sbb:
 
-	import React from 'react';
-	import SOCIAL_PROFILES from '../data/socialProfiles';
-	
-	const SocialProfile = props => {
-		const { link, image } = props.socialProfile;
-	
-		return (
-			<span>
-				<a href={link}>
-					<img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
-				</a>
-			</span>
-		)
-	}
-	
-	const SocialProfiles = () => (
-		<div>
-			<h2>Connect with me!</h2>
-			<div>
-				{
-					SOCIAL_PROFILES.map(SOCIAL_PROFILE => {
-						return <SocialProfile key={SOCIAL_PROFILE.id} socialProfile={SOCIAL_PROFILE} />;
-					})
-				}
-			</div>
-		</div>
-	)
-	
-	export default SocialProfiles;
+#### Cara 1:
 
+```react
+import React, {Component} from 'react';
+import SOCIAL_PROFILES from './data/socialProfiles';
+
+class SocialProfile extends Component {
+  render() {
+    const {link, image} = this.props.socialProfile;
+    
+    return (
+    	<div>
+        <a href={link}><img src={image} alt='social-profile' /></a>  
+      </div>
+    )
+  }
+}
+
+class SocialProfiles extends Component {
+  render() {
+    return (
+    	<div>
+      	{
+          SOCIAL_PROFILES.map((SOCIAL_PROFILE) => {
+            return (
+            	<SocialProfile key={SOCIAL_PROFILE.id} socialProfile={SOCIAL_PROFILE} />;
+            ) 
+          });
+        }
+      </div>
+    )
+  }
+
+  
+  export default SocialProfiles;
+```
 
 **Kembali ke file App.js** 
+
+```>``` Import social profile ke dalam file App.js
+
+```>``` Import SocialProfiles from './SocialProfiles';
+
+```>``` Kemudian tambahkan element component **socialProfile** pada App.js dibawah element component **Projects**: ```<Projects />```.
+
+```react
+<hr />
+<Projects />
+<hr />
+<SocialProfile />
+```
+
+
+
+#### Cara 2:
+
+```react
+import React from 'react';
+import SOCIAL_PROFILES from '../data/socialProfiles';
+
+const SocialProfile = props => {
+	const { link, image } = props.socialProfile;
+
+	return (
+		<span>
+			<a href={link}>
+				<img src={image} alt='social-profile' style={{ width: 35, height: 35, margin: 10 }} />
+			</a>
+		</span>
+	)
+}
+
+const SocialProfiles = () => (
+	<div>
+		<h2>Connect with me!</h2>
+		<div>
+			{
+				SOCIAL_PROFILES.map(SOCIAL_PROFILE => {
+					return <SocialProfile key={SOCIAL_PROFILE.id} socialProfile={SOCIAL_PROFILE} />;
+				})
+			}
+		</div>
+	</div>
+)
+
+export default SocialProfiles;**Kembali ke file App.js** 
+```
 
 * Import social profile ke dalam file app.js
 
 		import SocialProfiles from './SocialProfiles';
 
 * Kemudian tambahkan element component **socialProfile** pada App.js dibawah element component **Projects**:
-
-		}
-			<hr />
-			<Projects />
-			<hr />
-			<SocialProfile />
-		</div>
 
 Test di browser 3000.
 
@@ -1119,6 +1515,8 @@ Kembali ke file **SocialProfile.js** tambahkan style sbb:
 * Ganti tag div menjadi tag span, agar 3 icon tsb menjadi sebaris (side by side).
 
 <br>
+
+
 
 ## Style lanjutan.
 
@@ -1149,11 +1547,13 @@ Kita juga bisa refactor css nya:
 3. Hapus link rel css sebelumnya.
 
 
+
+
 ### Style Bootstrap.
 
 Buka web Bootstrap di getbootstrap.com > klik **Documentation** > Copy link css.
 
-Kemudian paste kan di file index.html di dalam element 
+Kemudian paste kan di file index.html di dalam element ```<head>```.
 
 	<head>
 		...
@@ -1176,7 +1576,9 @@ Contoh font:
 	* economica-bold.ttf.
 	* roboto-condensed.ttf.
 
-Kita dapat men-define global font-faces dengan menggunakan sintax ```@font-face```. 
+Anda bisa download dari google font dan tempatkan di folder assets
+
+Kemudian kita dapat men-define global font-faces dengan menggunakan sintax ```@font-face```. 
 
 Seperti sbb:
 
@@ -1208,8 +1610,9 @@ Dan
 		font-family: 'EconomicaBold';
 	}
 
-
 Cek tampilan baru pada browser.
+
+
 
 
 ### Photo Profile
@@ -1222,20 +1625,25 @@ lanjut anda import kedalam file App.js:
 
 atau sesuaikan dengan nama profile anda masing-masing.
 
-Tambahkan Tag ```<image />``` pada "render method":
+Tambahkan Tag ```<image />``` pada "render > return":
 
 	<img src={profile} alt='profile-image' />
 
+Untuk menambahkan **style** kita akan menggunakan **className** yang akan kita **target** dan **define** pada file **css**:
 
-Untuk menambahkan **style** kita akan menggunakan **className** yang akan kita **target** dan **define** pada file **css**.
+```react
+<img src={profile} alt="profile" className="profile" />
+```
 
 Pada file index.css update css sbb:
 
-	.profile {
-		width: 200px;
-		height: 200px;
-		border-radius: 100px;
-	}
+```css
+.profile {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+}
+```
 
 
 

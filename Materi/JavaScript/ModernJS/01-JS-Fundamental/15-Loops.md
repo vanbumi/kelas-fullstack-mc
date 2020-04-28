@@ -1,3 +1,5 @@
+
+
 # JavaScript Fundamental
 
 ## Loops
@@ -27,6 +29,10 @@ for(let i = 0; i < 10; i++){		// for(declaration variable; condition; increment,
 }
 ```
 
+try here: https://codepen.io/vanbumi/pen/jOOQQMO
+
+
+
 **Break iteration**
 
 ```javascript
@@ -40,6 +46,10 @@ for(let i = 0; i < 10; i++){
 }
 ```
 
+try here: https://codepen.io/vanbumi/pen/WNNYYoV?editors=0012
+
+
+
 **Perintah "break"**
 
 ```javascript
@@ -52,6 +62,8 @@ for(let i = 0; i < 10; i++){
   console.log('number ' + i);
 }
 ```
+
+try here: https://codepen.io/vanbumi/pen/RwwqqKY?editors=0011
 
 
 
@@ -75,6 +87,8 @@ while(i < 10){
 }
 ```
 
+try here: https://codepen.io/vanbumi/pen/QWWJJpW?editors=0012
+
 
 
 ```>``` **DO WHILE LOOP**
@@ -94,12 +108,14 @@ while(condition_here)
 let i = 0;
 
 do {
-  console.log('number ' + 1);
+  console.log('number ' + i);
   i++;
 }
 
 while(i < 10);
 ```
+
+try here: https://codepen.io/vanbumi/pen/mddQQWz?editors=0011
 
 
 
@@ -113,6 +129,10 @@ for(let i=0; i < cars.length; i++){
 }
 ```
 
+try here: https://codepen.io/vanbumi/pen/oNNQQeq?editors=0011
+
+
+
 **Menggunakan "forEach"**
 
 ```javascript
@@ -124,15 +144,27 @@ cars.forEach(function(car){
 });
 ```
 
+try here: https://codepen.io/vanbumi/pen/NWWEEaK?editors=0011
+
+
+
+**forEach dengan index parameter**
+
 ```javascript
-// forEach dengan index parameter
 const cars = ['Honda', 'Toyota', 'Isuzu', 'Suzuki', 'BMW'];
 
 cars.forEach(function(car, index){
   console.log(`${index} : ${car}`)
 });
+```
 
-// forEach dengan array parameter
+try here: https://codepen.io/vanbumi/pen/ZEEmmaB?editors=0011
+
+
+
+**forEach dengan array parameter**
+
+```react
 const cars = ['Honda', 'Toyota', 'Isuzu', 'Suzuki', 'BMW'];
 
 cars.forEach(function(car, index, array){
@@ -141,14 +173,18 @@ cars.forEach(function(car, index, array){
 });
 ```
 
-**Menggunakan Map**
+try here: https://codepen.io/vanbumi/pen/KKKrrQV?editors=0012
+
+
+
+**Loop dengan Map**
 
 ```javascript
 const users = [
 	{id: 1, name: 'Brandon'},
 	{id: 2, name: 'Ersya'},
-	{id: 1, name: 'Vanya'},
-	{id: 1, name: 'Vadya'},
+	{id: 3, name: 'Vanya'},
+	{id: 4, name: 'Vadya'},
 ];
 
 const ids = users.map(function(user){
@@ -159,6 +195,10 @@ const ids = users.map(function(user){
 
 console.log(ids);
 ```
+
+try here: https://codepen.io/vanbumi/pen/KKKrroV?editors=0011
+
+
 
 **For in loop**
 
@@ -175,3 +215,6 @@ for(let x in user){
   console.log(`${x} : ${user[x]}`);
 };
 ```
+
+try here: https://codepen.io/vanbumi/pen/abbQQKV?editors=0011
+

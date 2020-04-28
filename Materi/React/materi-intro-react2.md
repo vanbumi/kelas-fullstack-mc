@@ -2,90 +2,396 @@
 
 # ReactJS.
 
-* Link: https://reactjs.org/
+Github branch: second
 
-* Local path Materi: Desktop>01-KelasFulstack>Materi>materi-intro-react.md.
+### 1. Lifecycle Methods
 
-* Local path ProjectCase1: Desktop>01-KelasFulstack>project-react>portfolio.
+Lifecycle method pada React adalah function yang berjalan pada setiap siklus component di react, artinya function ini berjalan pada saat component loading untuk pertama kali pada aplikasi dan pada saat component keluar dari aplikasi. 
 
-* Local path ProjectCase2: Desktop>KelasReact>Project-Case>reactwebsite.
+Lifecycle method berlandasan pada hubungan antara component dengan document, menyisipkan component JSX ke dalam document.
 
-### Instalasi
+Contoh:
 
-## Instalasi
+```react
+reactDOM.render(<element />, document.getElementById('root'));
+```
 
-**1. Install Code Editor**: Visual Studio Code (rekomendasi) https://code.visualstudio.com/.
+menyisipkan atau menghilangkan / menghapus element element:
 
-Cara setup agar code editor bisa dibuka di browser:
-	
-* cmd-shift-p (MacOS & Linux).
-* ctrl-shift-p (Windows).
-* Pilih dan Enter “Shell Command”, and choose “Install ‘code’ command in path.
-* Buka folder project dan ketik ```code .``` maka anda dapat membuka Visual Studio Code berikut folder project dan file2 nya.
-	
-	Instal Extention: **ES7 React/Redux/GraphQL/React-Native snippets** (cukup search React).
-	
+```	react
+<html>
+	<head></head>
+  <body>
+  	<div id="root">
+      <element />
+    </div>
+  </body>
+</html>
+```
 
-**2. Install Commandline App**: 
-		
-* Terminal (MacOS & Linux user). 
-* GitBash (Windows user), cara instal GitBash: 
-https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal.
-
-> **Langkah-langkah:**
-1. Install Git dari https://git-scm.com/download/win
-2. Buka Visual Studio Code anda dan klik dan tahan Ctrl + ` (back thick) untuk membuka Terminal.
-3. Buka "command palette" dengan Ctrl + Shift + P.
-4. Ketik: "Select Default Shell".
-5. Pilih "Git Bash" dari pilihan yang ada.
-6. Click icon + pada terminal window.
-7. Terminal baru sekarang menjadi "Git Bash terminal". 
-8. Sekarang anda dapat berpindah antar Terminal dari menu.
-		
-<br>
-
-**3. Instal NodeJS** download link: https://nodejs.org/en/download/
-
-Setelah node terinstal sempurna kemudian cek version dengan cara sbb:
-		
-	node -v
-	# harus `v8.8.1` atau diatasnya.
-
-	npm -v
-	# harus `v5.4.2` atau diatasnya.
-	
-<br>
-
-<hr>	
-
-### Membuat web dengan ReactJS
-
-Kita akan membuat website sederhana dengan React, React Router dan Bootstrap.
-
-Menuju ke folder project, dan lakukan perintah:
-
-	create-react-app reactwebsite
-	
-reactwebiste akan menjadi nama web nya.
-
-
-	
+```react
+<html>
+	<head></head>
+  <body>
+  	<div id="root">
+      
+    </div>
+  </body>
+</html>
+```
 
 
 
+### 1.a. ComponentDidMount() 
+
+Function ini berjalan pada saat component load pertama kali pada aplikasi.
+
+### 1.b. ComponentWillUnmount()
+
+Function bekerja sebaliknya, function ini berjalan pada saat component meninggalkan aplikasi.
 
 
 
+### 1.a. ComponentDidMount()
+
+/> Pada aplikasi Portfolio sebelumnya tambahkan file baru "**Title**" dibawah folder **src**, kemudian tambahkan kode sbb:
+
+``` react
+import React, { Component } from 'react';
+
+const TITLE = [
+  'a software engineer',
+  'a guitaris pro',
+  'a good learner',
+  'a sport activity man'
+];
+
+class Title extends Component {
+  state = { titleIndex: 0 };
+  
+  render() {
+    const title = TITLE[this.state.titleIndex]
+    
+    return (
+      <p>I am {title}</p>
+    )
+  }
+}
+
+export default Title;
+```
+
+/> Pada file App.js require Title:
+
+```react
+import Title from './Title';
+```
+
+/> Sisipkan dibawah name:
+
+```react
+<h1>John Deep</h1>
+<h3>Software Engineer</h3>
+<p><Title /></p>
+```
+
+/> Coba hasilnya di browser.
 
 
 
+/> Selanjutnya kita akan tambahkan componentDidMount pada kode tsb menjadi sbb;
+
+```react
+import React, { Component } from 'react';
+
+const TITLE = [
+  'a software engineer',
+  'a guitaris pro',
+  'a good learner',
+  'a sport activity man'
+];
+
+class Title extends Component {
+  state = { titleIndex: 0 };
+
+	// componentDidMount
+	componentDidMount() {
+    console.log('Component Title has mounted')
+    
+    this.animateTitles();
+  }
+
+	// create helper method animateTitles
+	animateTitles = () => {
+    setInterval(() => {
+      const titleIndex = (this.state.titleIndex + 1) % TITLES.lenght;
+      
+      this.setState({ titleIndex });
+    }, 3000);
+  }
+  
+  render() {
+    const title = TITLE[this.state.titleIndex]
+    
+    return (
+      <p>I am {title}</p>
+    )
+  }
+}
+
+export default Title;
+```
+
+/> Coba kembali hasilnya di browser.
 
 
 
+###1.b. ComponentWillUnmount 
+
+ComponentWillUnmount bekerja sebaliknya dari componentDidMount.
+
+/> Tambahkan componentWillUnmount dibawah componentDidMount pada kode sebelumnya:
+
+```react
+componentWillUnmount() {
+  console.log('Component Title will unmount');
+}
+```
+
+/> Coba cek hasilnya di console log.
+
+/> Update kode interval menjadi sbb:
+
+```react
+animateTitles = () => {
+    this.setInterval = setInterval(() => {
+      const titleIndex = (this.state.titleIndex + 1) % TITLES.lenght;
+      
+      this.setState({ titleIndex });
+    }, 3000);
+  
+  	console.log('this.setInterval', this.setInterval);
+  }
+```
+
+/> Update componentWillUnmount menjadi:
+
+```react
+componentWillUnmount() {
+  console.log('Component Title will unmount');
+  
+  clearInterval(this.titleInterval);
+}
+```
+
+/> Coba hasilnya di browser.
 
 
 
+### 2. Stateless Functional Components
 
+Sebelumnya kita akan meng-organisasi file component menjadi satu di folder component:
+
+/> Dibawah folder src buatlah folder baru "components".
+
+/> Kemudian pindahkan App.js, Project.js, SocialProfiles.js dan Title.js ke dalam folder components.
+
+/> Jangan lupa untuk sesuaikan link import pada file App.js :
+
+```react
+import profile from '../assets/profile.png'
+```
+
+/> Pada Project.js :
+
+```react
+import PROJECTS from '../data/projects';
+```
+
+/> Pada SocialProfiles.js :
+
+```react
+import SOCIAL_PROFILES from '../data/socialProfiles';
+```
+
+/> Pada index.js :
+
+```react
+import App from './components/App';
+```
+
+/> Coba cek hasilnya di browser.
+
+
+
+**Stateless Functional Syntax**
+
+Stateless Functional Component adalah alternatif sintax dalam membuat React Component tanpa harus extending component class, dengan kata lain tidak usah menggunakan class component jika tidak ada **state** didalamnya, sebagai ganti nya kita dapat menggunakan function (arrow function) yang langsung ***return*** JSX, tanpa harus menggunakan ***render method*** lagi.
+
+/> Buka file Projects.js dan lakukan refactor dari class component menjadi functional component :
+
+```react
+const Proyek = props => {
+  const { title, image, description, link } = props.rempeyek;
+
+  return (
+    <div style={{ display: 'inline-block', width: 300, margin: 10 }}>
+      <h3>{title}</h3>
+      <img src={image} alt="profile" style={{ width: 200, height: 120 }} />
+      <p className="description">{description}</p>
+      <a href="{link}" className="link">{link}</a>
+    </div>
+  )
+}
+```
+
+/> Cek hasilnya dibrowser pastikan tidak ada error.
+
+/> Kemudian pada class Proejcts kita refactor juga :
+
+```react
+const Projects = () => (
+  <div>
+    <h2>Highlighted Projects</h2>
+    <div>
+      {
+        PROJECTS.map(PROJECT => (
+            <Proyek key={PROJECT.id} rempeyek={PROJECT} />
+        ))
+      }
+    </div>
+  </div>
+)
+  
+```
+
+Catatan: Jika function body hanya berisi return statement, maka kita bisa membuat ***inline return*** tanpa kata ***return*** dan tanpa ***kurung kurawal***.
+
+/> Buang juga component di import  react diatas, menjadi :
+
+```react
+import React from 'react';
+```
+
+/> Test hasil di browser pastikan tidak ada error.
+
+
+
+/> Selanjutnya adalah file SocialProfiles.js kita harus Refactor :
+
+```react
+const SocialProfile = props => {
+  const { link, image } = props.rempeyek;
+
+  return (
+    <span>
+      <a href={link}>
+        <img src={image} alt="social-profile" style={{ width: 35, height: 35, margin: 10 }} />
+      </a>
+    </span>
+  )
+}
+```
+
+/> Dan SocialProfiles juga
+
+```react
+const SocialProfiles = () => (
+  <div>
+    {
+      SOCIAL_PROFILES.map(SOCIAL_PROFILE => {
+      	<SocialProfile key={SOCIAL_PROFILE.id} rempeyek={SOCIAL_PROFILE} />
+      })
+    }
+  </div>
+)
+```
+
+/> Test hasil di browser pastikan tidak ada error.
+
+
+
+### Fetch Data API
+
+Kita akan menampilkan data yang diambil dari service API, dengan membuat component React.
+
+/> Buat Component baru "Jokes.js", tambahkan class sintaks sbb:
+
+``` react
+import React, { Component } from 'react';
+
+class Jokes extends Component {
+  state = { joke: {} };
+
+	componentDidMount() {
+    fetch('https://official-joke-api.appspot.com/random_joke')
+    	.then((response) => {response.json()})
+    	.then((json) => {this.setState({ joke: json })});
+  }
+
+	render() {
+    return (
+    	<div></div>
+    )
+  }
+}
+```
+
+/> Callback function diatas bila memuat hanya 1 argument bisa ditulis dengan lebih simple seperti ini :
+
+```react
+.then(response => response.json())
+.then(json => this.setState({ joke: json }));
+```
+
+/> Pada App.js import Jokes component :
+
+```react
+import Jokes from './Jokes';
+```
+
+/> Tambahkan component pada kode di App.js :
+
+```react
+   }
+   <hr />
+   <Projects />
+   <hr />
+   <SocialProfiles />
+   <hr />
+   <Jokes />
+ </div>
+```
+
+/> Kemudia di render ke UI sbb:
+
+```react
+import React, { Component } from 'react';
+
+class Jokes extends Component {
+  state = { joke: {} };
+
+	componentDidMount() {
+    fetch('https://official-joke-api.appspot.com/random_joke')
+    	.then((response) => {response.json()})
+    	.then((json) => {this.setState({ joke: json })});
+  }
+
+	render() {
+    const { setup, punchline } = this.state.joke;
+    
+    return (
+      
+    	<div>
+        <h2>Today Joke</h2>
+      	<p>{setup} <em>{punchline}</em></p>
+      </div>
+    )
+  }
+}
+```
+
+/> Lihat hasilnya di browser.
 
 
 

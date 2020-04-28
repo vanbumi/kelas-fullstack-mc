@@ -96,14 +96,6 @@ window.history.go(-2);
 val = window.history.length
 
 
-
-
-
-
-
-
-
-
 ```
 
 
